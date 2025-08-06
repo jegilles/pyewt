@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyewt"
+version = "1.0.0.0"
+authors = [
+  { name="Jerome Gilles", email="jgilles@sdsu.edu" },
+]
+Repository = "https://github.com/jegilles/pyEWT"
+Issues = "https://github.com/jegilles/pyEWT/issues"
+description = "Package implementing the Empirical Wavelet Transforms"
+keywords = [
+  "wavelet",
+  "empirical",
+  "mathematics",
+  "analysis",
+  "signal processing",
+  "image processing",
+  "harmonic analysis"
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+classifiers = [
+    "Intended Audience :: Science/Research",
+        "Intended Audience :: Education",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Topic :: Scientific/Engineering :: Image Processing",
+        "Topic :: Scientific/Engineering :: Mathematics"
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "matplotlib",
+  "scikit-learn",
+  "scikit-image",
+  "connected-components-3d",
+]
