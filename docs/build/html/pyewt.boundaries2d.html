@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyewt.boundaries2d module &mdash; pyewt 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyewt.defaultparams module" href="pyewt.defaultparams.html" />
+    <link rel="prev" title="pyewt.boundaries1d module" href="pyewt.boundaries1d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyewt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.boundaries2d module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.UnSymmetrize_Fourier"><code class="docutils literal notranslate"><span class="pre">UnSymmetrize_Fourier()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_EmpiricalLaw"><code class="docutils literal notranslate"><span class="pre">ewt2d_EmpiricalLaw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_HalfNormalLaw"><code class="docutils literal notranslate"><span class="pre">ewt2d_HalfNormalLaw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_OtsuMethod"><code class="docutils literal notranslate"><span class="pre">ewt2d_OtsuMethod()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_fourier_extend"><code class="docutils literal notranslate"><span class="pre">ewt2d_fourier_extend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_fourier_shrink"><code class="docutils literal notranslate"><span class="pre">ewt2d_fourier_shrink()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_get_maxima"><code class="docutils literal notranslate"><span class="pre">ewt2d_get_maxima()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_gss"><code class="docutils literal notranslate"><span class="pre">ewt2d_gss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_kmeansdetect"><code class="docutils literal notranslate"><span class="pre">ewt2d_kmeansdetect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_localmax"><code class="docutils literal notranslate"><span class="pre">ewt2d_localmax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_plot_ssplane"><code class="docutils literal notranslate"><span class="pre">ewt2d_plot_ssplane()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_spectrum_regularize"><code class="docutils literal notranslate"><span class="pre">ewt2d_spectrum_regularize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.plot_scalespace_maxima"><code class="docutils literal notranslate"><span class="pre">plot_scalespace_maxima()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries2d.symmetrize_fourier"><code class="docutils literal notranslate"><span class="pre">symmetrize_fourier()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyewt.boundaries2d module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.UnSymmetrize_Fourier"><code class="docutils literal notranslate"><span class="pre">UnSymmetrize_Fourier()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_EmpiricalLaw"><code class="docutils literal notranslate"><span class="pre">ewt2d_EmpiricalLaw()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_HalfNormalLaw"><code class="docutils literal notranslate"><span class="pre">ewt2d_HalfNormalLaw()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_OtsuMethod"><code class="docutils literal notranslate"><span class="pre">ewt2d_OtsuMethod()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_fourier_extend"><code class="docutils literal notranslate"><span class="pre">ewt2d_fourier_extend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_fourier_shrink"><code class="docutils literal notranslate"><span class="pre">ewt2d_fourier_shrink()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_get_maxima"><code class="docutils literal notranslate"><span class="pre">ewt2d_get_maxima()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_gss"><code class="docutils literal notranslate"><span class="pre">ewt2d_gss()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_kmeansdetect"><code class="docutils literal notranslate"><span class="pre">ewt2d_kmeansdetect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_localmax"><code class="docutils literal notranslate"><span class="pre">ewt2d_localmax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_plot_ssplane"><code class="docutils literal notranslate"><span class="pre">ewt2d_plot_ssplane()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.ewt2d_spectrum_regularize"><code class="docutils literal notranslate"><span class="pre">ewt2d_spectrum_regularize()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.plot_scalespace_maxima"><code class="docutils literal notranslate"><span class="pre">plot_scalespace_maxima()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries2d.symmetrize_fourier"><code class="docutils literal notranslate"><span class="pre">symmetrize_fourier()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyewt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
+      <li class="breadcrumb-item active">pyewt.boundaries2d module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pyewt.boundaries2d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyewt.boundaries2d">
+<span id="pyewt-boundaries2d-module"></span><h1>pyewt.boundaries2d module<a class="headerlink" href="#module-pyewt.boundaries2d" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.UnSymmetrize_Fourier">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">UnSymmetrize_Fourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extW</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#UnSymmetrize_Fourier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.UnSymmetrize_Fourier" title="Link to this definition"></a></dt>
+<dd><p>Removes the extension of the spectrum that was introduced to symmetrize the spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_array</strong> (<em>ndarray</em>) – Magnitude of the spectrum to unsymmetrize.</p></li>
+<li><p><strong>extH</strong> (<em>bool</em><em> or </em><em>int</em>) – 1 (or True) if there is vertical extension, 0 otherwise.</p></li>
+<li><p><strong>extW</strong> (<em>bool</em><em> or </em><em>int</em>) – 1 (or True) if there is horizontal extension, 0 otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>usym</strong> (<em>ndarray</em>) – Spectrum with original size.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (07/15/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_EmpiricalLaw">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_EmpiricalLaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_EmpiricalLaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_EmpiricalLaw" title="Link to this definition"></a></dt>
+<dd><p>Classifies minima curve lengths into two classes using an empirical law.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>1D ndarray</em>) – Set of minima curve lengths.</p></li>
+<li><p><strong>ind</strong> (<em>2D ndarray</em>) – Original index of each minima (shape: [n_minima, 2]).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>bounds</strong> (<em>ndarray</em>) – Detected bounds (subset of ind).</p></li>
+<li><p><strong>th</strong> (<em>float</em>) – Detected scale threshold.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (07/15/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_HalfNormalLaw">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_HalfNormalLaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lmax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_HalfNormalLaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_HalfNormalLaw" title="Link to this definition"></a></dt>
+<dd><p>Classifies minima curve lengths into two classes using a half-normal law.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>1D ndarray</em>) – Set of minima curve lengths.</p></li>
+<li><p><strong>ind</strong> (<em>2D ndarray</em>) – Original index of each minima (shape: [n_minima, 2]).</p></li>
+<li><p><strong>Lmax</strong> (<em>float</em>) – Maximum possible length of a minima curve.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>bounds</strong> (<em>ndarray</em>) – Detected bounds (subset of ind).</p></li>
+<li><p><strong>th</strong> (<em>float</em>) – Detected scale threshold.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (07/15/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_OtsuMethod">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_OtsuMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_OtsuMethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_OtsuMethod" title="Link to this definition"></a></dt>
+<dd><p>Classifies the set of minima curve lengths stored in histo into two classes using Otsu’s method.
+Returns the boundaries which are supposed to be the meaningful ones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>histo</strong> (<em>ndarray</em>) – Set of minima curve lengths (1D array).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>bounds</strong> (<em>ndarray</em>) – Detected bounds (subset of ind).</p></li>
+<li><p><strong>th</strong> (<em>int</em>) – Detected scale threshold.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (07/05/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_fourier_extend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_fourier_extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_fourier_extend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_fourier_extend" title="Link to this definition"></a></dt>
+<dd><p>Extend image by periodization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – image to extend</p></li>
+<li><p><strong>n</strong> (<em>-</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- fe</strong> – extended image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function extend the provided image f by periodization on a strip of width n around the image</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (02/11/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_fourier_shrink">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_fourier_shrink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_fourier_shrink"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_fourier_shrink" title="Link to this definition"></a></dt>
+<dd><p>shrink image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – image to extend</p></li>
+<li><p><strong>n</strong> (<em>-</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- fe</strong> – shrinked image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function shrinks the provided image f by removing a strip of width n around the image</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (02/11/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_get_maxima">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_get_maxima</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">absff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extW</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_get_maxima"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_get_maxima" title="Link to this definition"></a></dt>
+<dd><p>Build a scale-space representation and post-process detected maxima.
+Discards maxima near the edge and, if needed, the center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>absff</strong> (<em>2D ndarray</em>) – Input image (Fourier spectrum).</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – Empirical wavelet parameters (see Notes below).</p></li>
+<li><p><strong>extH</strong> (<em>int</em>) – 1 if height was extended, 0 otherwise.</p></li>
+<li><p><strong>extW</strong> (<em>int</em>) – 1 if width was extended, 0 otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>centers</strong> (<em>ndarray</em>) – Coordinates of significant maxima.</p></li>
+<li><p><strong>plane</strong> (<em>ndarray</em>) – Scale-space plane.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<dl class="simple">
+<dt>params[“typeDetect”] must be set to the wanted classification</dt><dd><p>method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+<p>params[“t”]: is the initial scale for the Gaussian kernel (0.8 is a good default value).
+params[“kn”]: is the kernel size for the Gaussian kernel (6 is a good default value).
+params[“niter”]: is the number of iterations through the scales (4 is a good default value).
+params[“edge”]: is the size (in pixels) of the strip to ignore at the edge of the image (0 is no strip).
+params[“includeCenter”]: if 1, the center of the image is included in the scale space maxima (0 is not included).</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/15/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_gss">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_gss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_gss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_gss" title="Link to this definition"></a></dt>
+<dd><p>Build a 2D Gaussian scale space and detect local maxima.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>2D ndarray</em>) – Input image (Fourier spectrum).</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – Parameters for the scale space and maxima detection (see Notes below).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>worm_bound</strong> (<em>ndarray</em>) – Coordinates of the detected maxima.</p></li>
+<li><p><strong>Th</strong> (<em>float</em>) – Threshold for maxima detection.</p></li>
+<li><p><strong>plane</strong> (<em>ndarray</em>) – Scale-space plane.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<dl class="simple">
+<dt>params[“typeDetect”] must be set to the wanted classification</dt><dd><p>method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+<p>params[“t”]: is the initial scale for the Gaussian kernel (0.8 is a good default value).
+params[“kn”]: is the kernel size for the Gaussian kernel (6 is a good default value).
+params[“niter”]: is the number of iterations through the scales (4 is a good default value).</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/21/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_kmeansdetect">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_kmeansdetect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_kmeansdetect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_kmeansdetect" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using kmeans (for 1D L).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>L</strong> (<em>1D ndarray</em>) – Vector of the length of the minima curves.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>th</strong> (<em>float</em>) – Detected scale threshold.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (07/15/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_localmax">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_localmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_localmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_localmax" title="Link to this definition"></a></dt>
+<dd><p>Find local maxmima on a 2D image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>-</em>) – image on which to perform the detection.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>- tag</strong> (<em>ndarray</em>) – image with pixels either at 0 or 1 where 1 means a local maximum has been detected.</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0 (02/11/2025)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_plot_ssplane">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_plot_ssplane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_plot_ssplane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_plot_ssplane" title="Link to this definition"></a></dt>
+<dd><p>Plot 3D scale-space</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>- plane DOK sparse</em>) – contains the 3D scale-space domain</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0</em><em> (</em><em>02/11/2025</em><em>)</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.ewt2d_spectrum_regularize">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">ewt2d_spectrum_regularize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#ewt2d_spectrum_regularize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.ewt2d_spectrum_regularize" title="Link to this definition"></a></dt>
+<dd><p>2D Spectrum regularization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>ndarray</em>) – matrix containing the spectrum</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must have params[“reg”] to be set to one of the methods
+listed below
+must have params[“lengthfilter”] to be set for all methods
+must have params[“sigmafilter”] to be set to the standard
+deviation for the Gaussian method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ff</strong> – matrix containing the regularized spectrum</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function regularizes f using the selected method set in params[“reg”].
+The available methods are:
+- “none” : does nothing, returns f
+- “gaussian” : convolve f with a Gaussian of length and standard</p>
+<blockquote>
+<div><p>deviation given by params[“lengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (02/09/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.plot_scalespace_maxima">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">plot_scalespace_maxima</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxima</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logtag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Scale-space</span> <span class="pre">Maxima'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#plot_scalespace_maxima"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.plot_scalespace_maxima" title="Link to this definition"></a></dt>
+<dd><p>Plot the scale-space maxima on the Fourier spectrum</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – Input image</p></li>
+<li><p><strong>maxima</strong> (<em>-</em>) – Arrays that contain the coordinates of the detected maxima in the Fourier domain.</p></li>
+<li><p><strong>logtag</strong> (<em>-</em>) – Indicate if the logarithm of the spectrum should be used for the background.</p></li>
+<li><p><strong>title</strong> (<em>-</em>) – Title to be plotted on the figure. The default title is “Scale-space Maxima”.</p></li>
+<li><p><strong>radius</strong> (<em>-</em>) – Radius of the maxima to be plotted in pixels. The default value is 1 pixel.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function plots the position of the detected maxima in the Fourier domain via the
+scale-space method.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/15/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries2d.symmetrize_fourier">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries2d.</span></span><span class="sig-name descname"><span class="pre">symmetrize_fourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries2d.html#symmetrize_fourier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries2d.symmetrize_fourier" title="Link to this definition"></a></dt>
+<dd><p>Symmetric extension of the Fourier spectrum</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>ndarray</em>) – input 2D Fourier spectrum</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>sym</strong> (<em>ndarray</em>) – symmetrized Fourier spectrum</p></li>
+<li><p><strong>extH</strong> (<em>True/False</em>) – indicate a vertical extension</p></li>
+<li><p><strong>extW</strong> (<em>True/False</em>) – indicate an horizontal extension</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function returns a symetrized Fourier spectrum by properly extending
+the expected directions. It returns a new spectrum where each dimension is
+odd.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (02/09/2025)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pyewt.boundaries1d.html" class="btn btn-neutral float-left" title="pyewt.boundaries1d module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyewt.defaultparams.html" class="btn btn-neutral float-right" title="pyewt.defaultparams module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jerome Gilles.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

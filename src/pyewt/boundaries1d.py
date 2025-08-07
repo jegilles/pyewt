@@ -45,16 +45,16 @@ def boundaries_detect(f,params):
     - A global trend remover method is set via params["globtrend"]:
         - "none" : does nothing, returns f
         - "powerlaw" : uses a power law to estimate the trend, returns 
-                f - powerlaw(f)
+            f - powerlaw(f)
         - "polylaw": uses a polynomial interpolation of degree specified
             by params["degree"] to estimate the trend, returns
-                f - polynomial(f)
+            f - polynomial(f)
         - "morpho" : uses morphological operators, returns
-                f - (opening(f)+closing(f))/2
+            f - (opening(f)+closing(f))/2
         - "tophat" : uses morphological operators, returns
-                f - opening(f)
+            f - opening(f)
         - "opening" : returns
-                opening(f)
+            opening(f)
 
     - A regularization method is set via params["reg"]:
         - "none" : does nothing, returns f

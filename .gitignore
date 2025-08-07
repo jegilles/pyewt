@@ -1,0 +1,4 @@
+.venv/
+src/.venv/
+src/.vscode
+src/pyewt/__pycache__

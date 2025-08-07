@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyewt.ewt2dcurvelet module &mdash; pyewt 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyewt.ewt2dlp module" href="pyewt.ewt2dlp.html" />
+    <link rel="prev" title="pyewt.ewt1d module" href="pyewt.ewt1d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyewt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.ewt2dcurvelet module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_angular_sector"><code class="docutils literal notranslate"><span class="pre">ewt2d_angular_sector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_create_polar_grid"><code class="docutils literal notranslate"><span class="pre">ewt2d_create_polar_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_filterbank"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_filterbank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_comp"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_plot_comp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_filters"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_plot_filters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_scaling"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_scaling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_detect"><code class="docutils literal notranslate"><span class="pre">ewt_angles_detect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_locmax"><code class="docutils literal notranslate"><span class="pre">ewt_angles_locmax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_locmaxmin"><code class="docutils literal notranslate"><span class="pre">ewt_angles_locmaxmin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.iewt2d_curvelet"><code class="docutils literal notranslate"><span class="pre">iewt2d_curvelet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dcurvelet.plot_curvelet_sectors"><code class="docutils literal notranslate"><span class="pre">plot_curvelet_sectors()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyewt.ewt2dcurvelet module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_angular_sector"><code class="docutils literal notranslate"><span class="pre">ewt2d_angular_sector()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_create_polar_grid"><code class="docutils literal notranslate"><span class="pre">ewt2d_create_polar_grid()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_filterbank"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_filterbank()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_comp"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_plot_comp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_filters"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_plot_filters()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_scaling"><code class="docutils literal notranslate"><span class="pre">ewt2d_curvelet_scaling()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_detect"><code class="docutils literal notranslate"><span class="pre">ewt_angles_detect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_locmax"><code class="docutils literal notranslate"><span class="pre">ewt_angles_locmax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.ewt_angles_locmaxmin"><code class="docutils literal notranslate"><span class="pre">ewt_angles_locmaxmin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.iewt2d_curvelet"><code class="docutils literal notranslate"><span class="pre">iewt2d_curvelet()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.ewt2dcurvelet.plot_curvelet_sectors"><code class="docutils literal notranslate"><span class="pre">plot_curvelet_sectors()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyewt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
+      <li class="breadcrumb-item active">pyewt.ewt2dcurvelet module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pyewt.ewt2dcurvelet.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyewt.ewt2dcurvelet">
+<span id="pyewt-ewt2dcurvelet-module"></span><h1>pyewt.ewt2dcurvelet module<a class="headerlink" href="#module-pyewt.ewt2dcurvelet" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_angular_sector">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_angular_sector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gammaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Dtheta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_angular_sector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_angular_sector" title="Link to this definition"></a></dt>
+<dd><p>Build curvelet filter on a given angular sector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta</strong> (<em>-</em>) – Angles at each pixel of the polar grid corresponding to the image</p></li>
+<li><p><strong>radius</strong> (<em>-</em>) – Radius at each pixel of the polar grid corresponding to the image</p></li>
+<li><p><strong>theta0</strong> (<em>-</em>)</p></li>
+<li><p><strong>theta1</strong> (<em>angles defining the angular edges</em><em> (</em><em>must have theta0 &lt; theta1</em><em>)</em>)</p></li>
+<li><p><strong>r0</strong> (<em>-</em>)</p></li>
+<li><p><strong>r1</strong></p></li>
+<li><p><strong>pi</strong><strong>)</strong> (<em>radius defining the edges</em><em> of </em><em>the angular sector</em><em> (</em><em>must have r0 &lt; r1 &lt;=</em>)</p></li>
+<li><p><strong>gammaw</strong> (<em>-</em>)</p></li>
+<li><p><strong>Dtheta</strong> (<em>-</em>)</p></li>
+<li><p><strong>Returns</strong></p></li>
+<li><p><strong>angular</strong> (<em>-</em>) – Matrix containing the curvelet filter</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function creates the curvelet filter in the Fourier domain ((0,0) frequency
+being in the center of the image) which has a support defined in polar coordinates
+(r,angles) in</p>
+<blockquote>
+<div><p>[(1-gammaw)r0,(1+gammaw)r1]x[theta0-Dtheta,theta1+Dtheta],</p>
+</div></blockquote>
+<dl class="simple">
+<dt>and</dt><dd><p>[(1-gammaw)r0,(1+gammaw)r1]x[theta0-Dtheta+pi,theta1+Dtheta+pi],</p>
+</dd>
+</dl>
+<p>respectively.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_create_polar_grid">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_create_polar_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_create_polar_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_create_polar_grid" title="Link to this definition"></a></dt>
+<dd><p>Create the polar coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>-</em>)</p></li>
+<li><p><strong>H</strong> (<em>width and height</em><em> of </em><em>the image</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>- theta</strong> (<em>ndarray</em>) – Angles at each pixel of the polar grid corresponding to the image</p></li>
+<li><p><strong>- radius</strong> (<em>ndarray</em>) – Radius at each pixel of the polar grid corresponding to the image</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function creates matrices containing the polar radius and angles (in
+[-pi, pi]) for each pixel (assuming that the position (0,0) is at the center
+of the image.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_curvelet">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_curvelet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_curvelet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet" title="Link to this definition"></a></dt>
+<dd><p>2D empirical curvelet transform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – input image (must be square)</p></li>
+<li><p><strong>params</strong> (<em>-</em>) – must be set properly accordingly to the options described
+in the Notes section</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>- ewtc</strong> (<em>list</em>) – set of curvelet coefficients.</p></li>
+<li><p><strong>- mfb</strong> (<em>list</em>) – set of curvelet filters that were used to perform the forward transform.</p></li>
+<li><p><strong>- Bw</strong> (<em>set of detected scales (see Notes below)</em>)</p></li>
+<li><p><strong>- Bt</strong> (<em>set of detected angles (see Notes below)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function performs the empirical curvelet transform on the square image f.
+Three options are available (set in params[“option”] as 1, 2 or 3):</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>scales and angles are detected independently</p></li>
+<li><p>scales are detected first then the angular sector within each scale ring</p></li>
+<li><p>angles are detected first then the scales within each angular sector</p></li>
+</ol>
+</div></blockquote>
+<p>Note that the scaling function is always detect first before performing the above
+options.</p>
+<p>The options for detecting the scales and angles are set in params as:
+If params[“log”] is set to True, then the detection is performed on the logarithm
+of the spectrum of f.</p>
+<p>SCALES:
+Two types of preprocessing are available to “clean” the spectrum f:</p>
+<ol class="upperalpha simple">
+<li><dl class="simple">
+<dt>A global trend remover method is set via params[“globtrend”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns</span></dt><dd><p>f - powerlaw(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“polylaw”: uses a polynomial interpolation of degree specified</dt><dd><dl class="simple">
+<dt>by params[“degree”] to estimate the trend, returns</dt><dd><p>f - polynomial(f)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“morpho”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - (opening(f)+closing(f))/2</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“tophat”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - opening(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“opening”<span class="classifier">returns</span></dt><dd><p>opening(f)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A regularization method is set via params[“reg”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“lengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The wanted boundary detection method must be set in params[“detect”].
+The available options are:
+- “localmax” : select the mid-point between consecutive maxima.</p>
+<blockquote>
+<div><p>params[“N”] must be set to the expected number of modes.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima of the preprocessed spectrum.
+params[“N”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“localmaxminf”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima where the minima are detected on the original spectrum
+instead of the preprocessed one.
+params[“N”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“adaptivereg”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the preprocessed
+spectrum
+params[“InitBounds”] must be set with a vector of initial
+boundaries</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“adaptive”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the original
+spectrum
+params[“InitBounds”] must be set with a vector of initial
+boundaries</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to</span></dt><dd><p>automatically find the boundaries (including their number)
+params[“typeDetect”] must be set to the wanted classification
+method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “mean” : threshold is fixed as the mean of the data
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>For the automatic detection methods, a completion step is available
+is the number of detected modes is lower than an expected value params[“N”].
+If needed, the last high frequency support is evenly splitted. This
+step is performed if params[“Completion”] is set to True.</p>
+<p>ANGLES:
+Two types of preprocessing are available to “clean” the spectrum f:</p>
+<ol class="upperalpha simple">
+<li><dl class="simple">
+<dt>A global trend remover method is set via params[“curvpreproc”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns</span></dt><dd><p>f - powerlaw(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“polylaw”: uses a polynomial interpolation of degree specified</dt><dd><dl class="simple">
+<dt>by params[“curvdegree”] to estimate the trend, returns</dt><dd><p>f - polynomial(f)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“morpho”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - (opening(f)+closing(f))/2</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“tophat”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - opening(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“opening”<span class="classifier">returns</span></dt><dd><p>opening(f)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A regularization method is set via params[“curvreg”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“curvlengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“curvlengthfilter”]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“curvlengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The wanted boundary detection method must be set in params[“curvmethod”].
+The available options are:
+- “localmax” : select the mid-point between consecutive maxima.</p>
+<blockquote>
+<div><p>params[“curvN”] must be set to the expected number of modes.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima of the preprocessed spectrum.
+params[“curvN”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to</span></dt><dd><p>automatically find the boundaries (including their number)
+params[“typeDetect”] must be set to the wanted classification
+method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “mean” : threshold is fixed as the mean of the data
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The ewtc and mfb are organized as follows: 1) (ewtc{1} are the lowpass
+coefficient (scaling function). For option 1 and 2, next are mfb{s}{t} are the
+coefficients where s corresponds to the scales and t to the direction; while for
+option 3 they are ordered as mfb{t}{s}. For mfb, all filters have been shifted
+back to have the (0,0) frequency in the upper left corner.</p>
+<p>For option 1 and 2, Bw is an array containing the set of scale boundaries, for
+option 3 it is a list where Bw[0] is the radius of the scaling function, the
+remaining Bw[k] are ndarray containing the list of scale radius per each angular
+sector.</p>
+<p>For option 1 and 3, Bt is an array contianing the set of angles boundaries, for
+option 2 it is a list where each Bt[k] is an ndarray containing the detected angles
+within each scale ring.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_curvelet_filterbank">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_curvelet_filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Bw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Bt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_curvelet_filterbank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_filterbank" title="Link to this definition"></a></dt>
+<dd><p>Build the empirical curvelet filter bank</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Bw</strong> (<em>-</em>) – list of radius boundaries (scales) normalized in [0,pi)</p></li>
+<li><p><strong>Bt</strong> (<em>-</em>) – list of angular boundaries normalized in [-3pi/4,pi/4]</p></li>
+<li><p><strong>W</strong> (<em>-</em>)</p></li>
+<li><p><strong>H</strong> (<em>width and height</em><em> of </em><em>the image</em>)</p></li>
+<li><p><strong>option</strong> (<em>-</em>) – wanted curvelet option used to detect Bw and Bt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- mfb</strong> – set of filters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The filter bank is organized as follows: 1) (mfb{1} is the lowpass
+filter (scaling function). For option 1 and 2, next are mfb{s}{t} are the bandpass
+filters where s corresponds to the scales and t to the direction; while for
+option 3 they are ordered as mfb{t}{s}. All filters have been shifted back to
+have the (0,0) frequency in the upper left corner.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_comp">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_curvelet_plot_comp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_curvelet_plot_comp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_comp" title="Link to this definition"></a></dt>
+<dd><p>Plot the empirical curvelet components</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ewt</strong> (<em>-</em>) – The first element is the scaling coefficient. The next elements are themselves lists
+containing the curvelet coefficients</p></li>
+<li><p><strong>option</strong> (<em>-</em>) – Type of empirical curvelets that was used in the transform</p></li>
+<li><p><strong>energy</strong> (<em>-</em>) – If True, the energy will be indicated above each image</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0</em><em> (</em><em>01/30/2025</em><em>)</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_filters">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_curvelet_plot_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_curvelet_plot_filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_plot_filters" title="Link to this definition"></a></dt>
+<dd><p>Plot the empirical curvelet filters in the Fourier domain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mfb</strong> (<em>-</em>) – The first element is the scaling filter. The next elements are themselves lists
+containing the curvelet filters</p></li>
+<li><p><strong>option</strong> (<em>-</em>) – Type of empirical curvelets that was used in the transform</p></li>
+<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
+<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
+<li><p><strong>Version</strong> (<em>1.0</em><em> (</em><em>01/30/2025</em><em>)</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt2d_curvelet_scaling">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt2d_curvelet_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt2d_curvelet_scaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt2d_curvelet_scaling" title="Link to this definition"></a></dt>
+<dd><p>Build the scaling function in the Fourier domain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>-</em>) – Radius at each pixel of the polar grid corresponding to the image</p></li>
+<li><p><strong>w1</strong> (<em>-</em>)</p></li>
+<li><p><strong>gamma</strong> (<em>-</em>)</p></li>
+<li><p><strong>W</strong> (<em>-</em>)</p></li>
+<li><p><strong>H</strong> (<em>width and height</em><em> of </em><em>the image</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- yms</strong> – Matrix containing the scaling filter</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Generate the 2D Littlewood-Paley wavelet in the Fourier domain associated
+to the disk [0,w1] with transition ratio gamma.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt_angles_detect">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt_angles_detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt_angles_detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt_angles_detect" title="Link to this definition"></a></dt>
+<dd><p>Detect the angular boundaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – 1D spectrum on which to perform the detection</p></li>
+<li><p><strong>params</strong> (<em>-</em>) – must be set properly accordingly to the options described
+in the Notes section</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- boundaries</strong> – set of detected angles</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If params[“log”] is set to True, then the detection is performed
+on the logarithm of the spectrum of f.</p>
+<p>Two types of preprocessing are available to “clean” the spectrum f:</p>
+<ol class="upperalpha simple">
+<li><dl class="simple">
+<dt>A global trend remover method is set via params[“curvpreproc”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns</span></dt><dd><p>f - powerlaw(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“polylaw”: uses a polynomial interpolation of degree specified</dt><dd><dl class="simple">
+<dt>by params[“curvdegree”] to estimate the trend, returns</dt><dd><p>f - polynomial(f)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“morpho”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - (opening(f)+closing(f))/2</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“tophat”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - opening(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“opening”<span class="classifier">returns</span></dt><dd><p>opening(f)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A regularization method is set via params[“curvreg”]:</dt><dd><ul class="simple">
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“curvlengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“curvlengthfilter”]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“curvlengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The wanted boundary detection method must be set in params[“curvmethod”].
+The available options are:
+- “localmax” : select the mid-point between consecutive maxima.</p>
+<blockquote>
+<div><p>params[“curvN”] must be set to the expected number of modes.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima of the preprocessed spectrum.
+params[“curvN”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to</span></dt><dd><p>automatically find the boundaries (including their number)
+params[“typeDetect”] must be set to the wanted classification
+method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “mean” : threshold is fixed as the mean of the data
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt_angles_locmax">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt_angles_locmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt_angles_locmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt_angles_locmax" title="Link to this definition"></a></dt>
+<dd><p>Detect the midpoint between N largest maxima</p>
+<section id="parameter">
+<h2>Parameter<a class="headerlink" href="#parameter" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>f: ndarray</dt><dd><p>1D spectrum on which to perform the detection</p>
+</dd>
+</dl>
+</li>
+<li><p>N: maximal number of largest maxima</p></li>
+</ul>
+<p>Returns
+- bounds: ndarray</p>
+<blockquote>
+<div><p>set of detected midpoints</p>
+</div></blockquote>
+<p class="rubric">Notes</p>
+<p>The minima are return as indices (not frequency).</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.ewt_angles_locmaxmin">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">ewt_angles_locmaxmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#ewt_angles_locmaxmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.ewt_angles_locmaxmin" title="Link to this definition"></a></dt>
+<dd><p>Detect the lowest minima between N largest maxima</p>
+<section id="id1">
+<h2>Parameter<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>f: ndarray</dt><dd><p>1D spectrum on which to perform the detection</p>
+</dd>
+</dl>
+</li>
+<li><p>N: maximal number of largest maxima</p></li>
+</ul>
+<p>Returns
+- bounds: ndarray</p>
+<blockquote>
+<div><p>set of detected minima</p>
+</div></blockquote>
+<p class="rubric">Notes</p>
+<p>The minima are return as indices (not frequency).</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.iewt2d_curvelet">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">iewt2d_curvelet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewtc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#iewt2d_curvelet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.iewt2d_curvelet" title="Link to this definition"></a></dt>
+<dd><p>Inverse 2D empirical curvelet transform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ewtc</strong> (<em>-</em>) – set of curvelet coefficients.</p></li>
+<li><p><strong>mfb</strong> (<em>-</em>) – set of curvelet filters that were used to perform the forward transform.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>- rec</strong> – reconstructed image (note it is of complex type)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Uses the formulation of the dual filter bank to perform the inverse transform.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.ewt2dcurvelet.plot_curvelet_sectors">
+<span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dcurvelet.</span></span><span class="sig-name descname"><span class="pre">plot_curvelet_sectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logtag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Curvelet</span> <span class="pre">Fourier</span> <span class="pre">supports'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dcurvelet.html#plot_curvelet_sectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dcurvelet.plot_curvelet_sectors" title="Link to this definition"></a></dt>
+<dd><p>Plot the rings delineating the curvelet supports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>-</em>) – Input image</p></li>
+<li><p><strong>BW</strong> (<em>-</em>) – Array that contain the detected radius.</p></li>
+<li><p><strong>BT</strong> (<em>-</em>) – Array that contain the detected angle.</p></li>
+<li><p><strong>option</strong> (<em>-</em>) – Type of empirical curvelets that was used in the transform</p></li>
+<li><p><strong>logtag</strong> (<em>-</em>) – Indicate if the logarithm of the spectrum should be used for the background.</p></li>
+<li><p><strong>title</strong> (<em>-</em>) – Title to be plotted on the figure. The default title is “Curvelet Fourier supports”.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function plots the position of the detected curvelet supports in the Fourier domain.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (01/30/2025)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pyewt.ewt1d.html" class="btn btn-neutral float-left" title="pyewt.ewt1d module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyewt.ewt2dlp.html" class="btn btn-neutral float-right" title="pyewt.ewt2dlp module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jerome Gilles.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

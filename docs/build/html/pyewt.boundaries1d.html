@@ -1,0 +1,1194 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyewt.boundaries1d module &mdash; pyewt 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyewt.boundaries2d module" href="pyewt.boundaries2d.html" />
+    <link rel="prev" title="pyewt package" href="pyewt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyewt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.boundaries1d module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.adaptive_bounds_adapt"><code class="docutils literal notranslate"><span class="pre">adaptive_bounds_adapt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.boundaries_completion"><code class="docutils literal notranslate"><span class="pre">boundaries_completion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.boundaries_detect"><code class="docutils literal notranslate"><span class="pre">boundaries_detect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.empiricallaw"><code class="docutils literal notranslate"><span class="pre">empiricallaw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.gss_boundariesdetect"><code class="docutils literal notranslate"><span class="pre">gss_boundariesdetect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.halfnormallaw"><code class="docutils literal notranslate"><span class="pre">halfnormallaw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.kmeansdetect"><code class="docutils literal notranslate"><span class="pre">kmeansdetect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.lengthscalecurve"><code class="docutils literal notranslate"><span class="pre">lengthscalecurve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.localmax"><code class="docutils literal notranslate"><span class="pre">localmax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.localmaxmin"><code class="docutils literal notranslate"><span class="pre">localmaxmin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.localmaxmin2"><code class="docutils literal notranslate"><span class="pre">localmaxmin2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.maxcheckplateau"><code class="docutils literal notranslate"><span class="pre">maxcheckplateau()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.meaningfulscalespace"><code class="docutils literal notranslate"><span class="pre">meaningfulscalespace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.meanth"><code class="docutils literal notranslate"><span class="pre">meanth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.morphoclosing1D"><code class="docutils literal notranslate"><span class="pre">morphoclosing1D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.morphodilation1D"><code class="docutils literal notranslate"><span class="pre">morphodilation1D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.morphoerosion1D"><code class="docutils literal notranslate"><span class="pre">morphoerosion1D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.morphoopening1D"><code class="docutils literal notranslate"><span class="pre">morphoopening1D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.morphotrend"><code class="docutils literal notranslate"><span class="pre">morphotrend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.openingtrend"><code class="docutils literal notranslate"><span class="pre">openingtrend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.otsumethod"><code class="docutils literal notranslate"><span class="pre">otsumethod()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.plangaussianscalespace"><code class="docutils literal notranslate"><span class="pre">plangaussianscalespace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.plotboundaries"><code class="docutils literal notranslate"><span class="pre">plotboundaries()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.plotplane"><code class="docutils literal notranslate"><span class="pre">plotplane()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.polytrend"><code class="docutils literal notranslate"><span class="pre">polytrend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.powerlawtrend"><code class="docutils literal notranslate"><span class="pre">powerlawtrend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.removemerge"><code class="docutils literal notranslate"><span class="pre">removemerge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.removetrend"><code class="docutils literal notranslate"><span class="pre">removetrend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.specreg"><code class="docutils literal notranslate"><span class="pre">specreg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyewt.boundaries1d.tophattrend"><code class="docutils literal notranslate"><span class="pre">tophattrend()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyewt.boundaries1d module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.adaptive_bounds_adapt"><code class="docutils literal notranslate"><span class="pre">adaptive_bounds_adapt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.boundaries_completion"><code class="docutils literal notranslate"><span class="pre">boundaries_completion()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.boundaries_detect"><code class="docutils literal notranslate"><span class="pre">boundaries_detect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.empiricallaw"><code class="docutils literal notranslate"><span class="pre">empiricallaw()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.gss_boundariesdetect"><code class="docutils literal notranslate"><span class="pre">gss_boundariesdetect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.halfnormallaw"><code class="docutils literal notranslate"><span class="pre">halfnormallaw()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.kmeansdetect"><code class="docutils literal notranslate"><span class="pre">kmeansdetect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.lengthscalecurve"><code class="docutils literal notranslate"><span class="pre">lengthscalecurve()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.localmax"><code class="docutils literal notranslate"><span class="pre">localmax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.localmaxmin"><code class="docutils literal notranslate"><span class="pre">localmaxmin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.localmaxmin2"><code class="docutils literal notranslate"><span class="pre">localmaxmin2()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.maxcheckplateau"><code class="docutils literal notranslate"><span class="pre">maxcheckplateau()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.meaningfulscalespace"><code class="docutils literal notranslate"><span class="pre">meaningfulscalespace()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.meanth"><code class="docutils literal notranslate"><span class="pre">meanth()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.morphoclosing1D"><code class="docutils literal notranslate"><span class="pre">morphoclosing1D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.morphodilation1D"><code class="docutils literal notranslate"><span class="pre">morphodilation1D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.morphoerosion1D"><code class="docutils literal notranslate"><span class="pre">morphoerosion1D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.morphoopening1D"><code class="docutils literal notranslate"><span class="pre">morphoopening1D()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.morphotrend"><code class="docutils literal notranslate"><span class="pre">morphotrend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.openingtrend"><code class="docutils literal notranslate"><span class="pre">openingtrend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.otsumethod"><code class="docutils literal notranslate"><span class="pre">otsumethod()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.plangaussianscalespace"><code class="docutils literal notranslate"><span class="pre">plangaussianscalespace()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.plotboundaries"><code class="docutils literal notranslate"><span class="pre">plotboundaries()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.plotplane"><code class="docutils literal notranslate"><span class="pre">plotplane()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.polytrend"><code class="docutils literal notranslate"><span class="pre">polytrend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.powerlawtrend"><code class="docutils literal notranslate"><span class="pre">powerlawtrend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.removemerge"><code class="docutils literal notranslate"><span class="pre">removemerge()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.removetrend"><code class="docutils literal notranslate"><span class="pre">removetrend()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.specreg"><code class="docutils literal notranslate"><span class="pre">specreg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyewt.boundaries1d.tophattrend"><code class="docutils literal notranslate"><span class="pre">tophattrend()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyewt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
+      <li class="breadcrumb-item active">pyewt.boundaries1d module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pyewt.boundaries1d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyewt.boundaries1d">
+<span id="pyewt-boundaries1d-module"></span><h1>pyewt.boundaries1d module<a class="headerlink" href="#module-pyewt.boundaries1d" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.adaptive_bounds_adapt">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">adaptive_bounds_adapt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#adaptive_bounds_adapt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.adaptive_bounds_adapt" title="Link to this definition"></a></dt>
+<dd><p>Adapt given boundaries to actual lowest minima</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the spectrum used to find the minima</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must have params[“degree”] set to the wanted polynomial degree</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of updated boundaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function adapt an initial set of boundaries to the studied signal.
+First it computes some neighborhood from the initial boundaries then it
+detects the global minima in each neighborhood.
+The local minima are computed from f.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.boundaries_completion">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">boundaries_completion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#boundaries_completion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.boundaries_completion" title="Link to this definition"></a></dt>
+<dd><p>Complete set of given boundaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the spectrum</p></li>
+<li><p><strong>nparray</strong> (<em>bounds -</em>) – list of previously detected boundaries</p></li>
+<li><p><strong>N</strong> (<em>integer</em>) – number of wanted supports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated list of boundaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function complete the list of detected boundaries
+to make sure the minimum amount of modes is NT. If that
+minimum is already reached then the function returns the
+original set of boundaries. If completion is needed, then
+the high frequencies support is evenly subdivided to provide
+the extra boundaries.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.boundaries_detect">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">boundaries_detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#boundaries_detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.boundaries_detect" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful 1D boundaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the spectrum</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must be set properly accordingly to the options described
+above</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – Updated list of boundaries</p></li>
+<li><p><em>presig - nparray</em> – Preprocessed spectrum used for the detection</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function complete the list of detected boundaries
+to make sure the minimum amount of modes is NT. If that
+minimum is already reached then the function returns the
+original set of boundaries. If completion is needed, then
+the high frequencies support is evenly subdivided to provide
+the extra boundaries.</p>
+<p>If params[“log”] is set to True, then the detection is performed
+on the logarithm of f, otherwise it will be on f itself.</p>
+<p>Two types of preprocessing are available to “clean” the spectrum:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A global trend remover method is set via params[“globtrend”]:</dt><dd><ul>
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns</span></dt><dd><p>f - powerlaw(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“polylaw”: uses a polynomial interpolation of degree specified</dt><dd><p>by params[“degree”] to estimate the trend, returns
+f - polynomial(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“morpho”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - (opening(f)+closing(f))/2</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“tophat”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - opening(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“opening”<span class="classifier">returns</span></dt><dd><p>opening(f)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A regularization method is set via params[“reg”]:</dt><dd><ul>
+<li><p>“none” : does nothing, returns f</p></li>
+<li><dl class="simple">
+<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“lengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The wanted boundary detection method must be set in params[“detect”].
+The available options are:
+- “localmax” : select the mid-point between consecutive maxima.</p>
+<blockquote>
+<div><p>params[“N”] must be set to the expected number of modes.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima of the preprocessed spectrum.
+params[“N”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“localmaxminf”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima where the minima are detected on the original spectrum
+instead of the preprocessed one.
+params[“N”] must be set to the expected number of modes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“adaptivereg”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the preprocessed
+spectrum
+params[“InitBounds”] must be set with a vector of initial
+boundaries</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“adaptive”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the original
+spectrum
+params[“InitBounds”] must be set with a vector of initial
+boundaries</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to</span></dt><dd><p>automatically find the boundaries (including their number)
+params[“typeDetect”] must be set to the wanted classification
+method. The available options are:
+- “otsu” : uses Otsu’s technique
+- “halfnormal” : uses a half-normal law to model the problem
+- “empiricallaw” : uses the data itself to build a model of
+the problem
+- “mean” : threshold is fixed as the mean of the data
+- “kmeans” : uses kmeans to classify</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>For the automatic detection methods, a completion step is available
+is the number of detected modes is lower than an expected value params[“N].
+If needed, the last high frequency support is evenly splitted. This
+step is performed if params[“Completion”] is set to True.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.empiricallaw">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">empiricallaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#empiricallaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.empiricallaw" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using the epsilon-meaningful method
+(empirical law)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>nparray</em>) – vector of the length of the minima curves</p></li>
+<li><p><strong>ind</strong> (<em>nparray</em>) – vector containing the indices of the position of the original
+minima</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of the indices of the position of the meaningful minima</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function classifies the set of minima curve lengths stored
+in L into the ones which are epsilon-meaningful for an empirical
+law fitted. It returns the meaninful ones and the detected threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.gss_boundariesdetect">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">gss_boundariesdetect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#gss_boundariesdetect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.gss_boundariesdetect" title="Link to this definition"></a></dt>
+<dd><p>Extract meaningful boundaries by scale-space method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>1D array</em>) – input vector</p></li>
+<li><p><strong>type</strong> (<em>string</em>) – method to be used: “otsu”, “halfnormal”, “empiricallaw”, “mean”, “kmeans”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of indices of the position of the detected local minima</p></li>
+<li><p><strong>plane</strong> (<em>lil_matrix</em>) – scale-space plane representation</p></li>
+<li><p><em>L - nparray</em> – vector containing the length of the scale-space curves</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function builds a scale-space representation of the provided histogram and then
+extract the meaningful minima which will correspond to segmenting the histogram. It
+returns an array bounds containing the indices of the boundaries, the set of length
+of the scale-space curves, and the detected threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/11/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.halfnormallaw">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">halfnormallaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lmax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#halfnormallaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.halfnormallaw" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using the epsilon-meaningful method
+(half-normal law)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>nparray</em>) – vector of the length of the minima curves</p></li>
+<li><p><strong>ind</strong> (<em>nparray</em>) – vector containing the indices of the position of the original
+minima</p></li>
+<li><p><strong>Lmax</strong> (<em>number</em>) – maximum possible length of a minima curve (i.e. number of
+columns in the scale-space plane)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of the indices of the position of the meaningful minima</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function classifies the set of minima curve lengths stored
+in L into the ones which are epsilon-meaningful for an half-normal
+law fitted to the data. It returns the meaninful ones and the detected
+threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.kmeansdetect">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">kmeansdetect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#kmeansdetect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.kmeansdetect" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using kmeans</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>nparray</em>) – vector of the length of the minima curves</p></li>
+<li><p><strong>ind</strong> (<em>nparray</em>) – vector containing the indices of the position of the original
+minima</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of the indices of the position of the meaningful minima</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function classifies the set of minima curve lengths stored
+in L into the ones which meaningful based on a kmeans clustering.
+It returns the meaninful ones and the detected threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.lengthscalecurve">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">lengthscalecurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#lengthscalecurve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.lengthscalecurve" title="Link to this definition"></a></dt>
+<dd><p>Compute the length of curves in the scale-space plane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plane</strong> (<em>lil_matrix</em>) – scale-space plane representation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>Length - nparray</em> – list of the length of each curve</p></li>
+<li><p><em>Indices - nparray</em> – list of indices of the position of the original local minima</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function returns a vector containing the length of each scale-space
+curves (in terms of scale lifespan) and a vector containing the indices
+corresponding to the position of the original local minima (i.e. scale 0)</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.localmax">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">localmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#localmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.localmax" title="Link to this definition"></a></dt>
+<dd><p>Find mid-point between maxima</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the spectrum</p></li>
+<li><p><strong>N</strong> (<em>integer</em>) – number of wanted supports</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of N-1 boundaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function detects the position of the N-1 boundaries
+which define N supports. These positions correspond to the
+mid-point between consecutive local maxima.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/17/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.localmaxmin">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">localmaxmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#localmaxmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.localmaxmin" title="Link to this definition"></a></dt>
+<dd><p>Find lowest minima between maxima</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the preprocessed spectrum</p></li>
+<li><p><strong>N</strong> (<em>integer</em>) – number of wanted supports</p></li>
+<li><p><strong>f2</strong> (<em>nparray</em>) – vector containing the original spectrum used
+to find the minima</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of N-1 boundaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function detects the position of the N-1 boundaries
+which define N supports. These positions correspond to the
+lowest minima between consecutive local maxima.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/17/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.localmaxmin2">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">localmaxmin2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#localmaxmin2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.localmaxmin2" title="Link to this definition"></a></dt>
+<dd><p>Detect the lowest local minima between two consecutive local maxima</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>nparray</em>) – input vector</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of indices of the position of the detected local minima</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function return an array bounds containing the indices of the lowest local minima
+between two consecutive local maxima in a vector f</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.maxcheckplateau">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">maxcheckplateau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#maxcheckplateau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.maxcheckplateau" title="Link to this definition"></a></dt>
+<dd><p>Check plateau of maxima</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>L: nparray</dt><dd><p>vector containing the indices of detected minima</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Returns:
+-th: center of the plateau. If no plateau, returns 1.</p>
+<p class="rubric">Notes</p>
+<p>Check if maxima form a plateau. For those who do, it returns
+the position in the center of the plateau.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.meaningfulscalespace">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">meaningfulscalespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#meaningfulscalespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.meaningfulscalespace" title="Link to this definition"></a></dt>
+<dd><p>Extract meaningful boundaries from the scale-space plane with the selected method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – input vector</p></li>
+<li><p><strong>plane</strong> (<em>lil_matrix</em>) – scale-space plane representation</p></li>
+<li><p><strong>type</strong> (<em>string</em>) – method to be used: “otsu”, “halfnormal”, “empiricallaw”, “mean”, “kmeans”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of indices of the position of the detected local minima</p></li>
+<li><p><em>L - nparray</em> – vector containing the length of the scale-space curves</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function extracts the meaningful minima which will correspond to segmenting the
+histogram f based on its scale-space representation in plane. It returns an array bounds
+containing the indices of the boundaries, the set of length
+of the scale-space curves L, and the detected threshold th.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.meanth">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">meanth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#meanth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.meanth" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using a mean threshold</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>nparray</em>) – vector of the length of the minima curves</p></li>
+<li><p><strong>ind</strong> (<em>nparray</em>) – vector containing the indices of the position of the original
+minima</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of the indices of the position of the meaningful minima</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function classifies the set of minima curve lengths stored
+in L into the ones which meaningful based on a threshold computed
+as the mean of L. It returns the meaninful ones and the detected threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.morphoclosing1D">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">morphoclosing1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#morphoclosing1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.morphoclosing1D" title="Link to this definition"></a></dt>
+<dd><p>1D Morphological Closing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>sizeel</strong> (<em>integer</em>) – size of the structural element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the closed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>clo - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function applies the 1D morphological closing to f with a structural
+element of size sizeel (i.e. opening = erosion(dilation). It returns the
+closed version of f.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.morphodilation1D">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">morphodilation1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#morphodilation1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.morphodilation1D" title="Link to this definition"></a></dt>
+<dd><p>1D Morphological Dilation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>sizeel</strong> (<em>integer</em>) – size of the structural element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the dilated histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>s - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function applies the 1D morphological dilation to f with a structural
+element of size sizeel. It returns the dilated version of f.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.morphoerosion1D">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">morphoerosion1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#morphoerosion1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.morphoerosion1D" title="Link to this definition"></a></dt>
+<dd><p>1D Morphological Erosion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>sizeel</strong> (<em>integer</em>) – size of the structural element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the eroded histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>s - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function applies the 1D morphological erosion to f with a structural
+element of size sizeel. It returns the eroded version of f.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.morphoopening1D">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">morphoopening1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#morphoopening1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.morphoopening1D" title="Link to this definition"></a></dt>
+<dd><p>1D Morphological Opening</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>sizeel</strong> (<em>integer</em>) – size of the structural element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the opened histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ouv - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function applies the 1D morphological opening to f with a structural
+element of size sizeel (i.e. opening = dilation(erosion)). It returns the
+opened version of f.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.morphotrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">morphotrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#morphotrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.morphotrend" title="Link to this definition"></a></dt>
+<dd><p>Remove global trend using morphological opening + closing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function estimates the trend as half the sum of the morphological
+opening + closing of h. It then return the original histogram minus the
+trend.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.openingtrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">openingtrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#openingtrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.openingtrend" title="Link to this definition"></a></dt>
+<dd><p>Remove global trend using morphological opening</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function estimates the trend using the opening morphological operator.
+It then return the opened histogram.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/17/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.otsumethod">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">otsumethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#otsumethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.otsumethod" title="Link to this definition"></a></dt>
+<dd><p>Detect meaningful minima using Otsu’s method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<em>nparray</em>) – vector of the length of the minima curves</p></li>
+<li><p><strong>ind</strong> (<em>nparray</em>) – vector containing the indices of the position of the original
+minima</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>bounds - nparray</em> – list of the indices of the position of the meaningful minima</p></li>
+<li><p><em>th - number</em> – detected scale threshold</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function classifies the set of minima curve lengths stored
+in L into two classes by using Otsu’s method. It returns the
+meaninful ones and the detected threshold.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.plangaussianscalespace">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">plangaussianscalespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#plangaussianscalespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.plangaussianscalespace" title="Link to this definition"></a></dt>
+<dd><p>Build the scale-space plane containing the detected local minima across the scales</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – input vector</p></li>
+<li><p><strong>n</strong> (<em>integer</em>) – size of the gaussian kernel (default = 3)</p></li>
+<li><p><strong>t</strong> (<em>real number</em>) – initial scale (default = 0.16)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1 for detected local minima, 0 otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>plane - 2D sparse lil_matrix (each column corresponds to a scale)</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function return a sparse lil_matrix where entries equal to 1 correspond to the position
+of the detected lowest local minima across the different scales. The scale-space is built
+using the discrete Gaussian kernel based on the modified Bessel function of the first kind.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.plotboundaries">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">plotboundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SamplingRate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logtag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cpx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#plotboundaries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.plotboundaries" title="Link to this definition"></a></dt>
+<dd><p>Plot 1D boundaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – input vector which contains the histogram</p></li>
+<li><p><strong>bounds</strong> (<em>nparray</em>) – list of indices of the position of the detected local minima</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – title to be added to the plot</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Plot the position of the meaningful minima on top of the original histogram.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/18/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.plotplane">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">plotplane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hideaxes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#plotplane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.plotplane" title="Link to this definition"></a></dt>
+<dd><p>Plot the scale-space plane</p>
+<section id="id1">
+<h2>Parameters:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>plane: lil_matrix sparse matrix</dt><dd><p>matrix containing the scale-space plane</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>hideaxes: False (default) or True</dt><dd><p>if False, the axes will be plotted, if True , they will be hidden</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This function plots the scale-space plane containing the position of the local
+minima through the scales</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/11/2024)</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.polytrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">polytrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#polytrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.polytrend" title="Link to this definition"></a></dt>
+<dd><p>Remove global trend using a polynomial estimator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must have params[“degree”] set to the wanted polynomial degree</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function fits a polynomial of degree specified by params to the
+provided histogram h. It then return the original histogram minus the
+polynomial estimator.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.powerlawtrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">powerlawtrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#powerlawtrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.powerlawtrend" title="Link to this definition"></a></dt>
+<dd><p>Remove the global trend using a power law estimator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function fits a power law to the provided histogram
+h. It then return the original histogram minus the power
+law.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.removemerge">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">removemerge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">th</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#removemerge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.removemerge" title="Link to this definition"></a></dt>
+<dd><p>Detect the meaningful minima using kmeans</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – histogram to be segmented</p></li>
+<li><p><strong>plane</strong> (<em>lil_matrix</em>) – scale-space plane representation</p></li>
+<li><p><strong>array</strong> (<em>bounds - 1D</em>) – list of the indices of the position of the meaningful minima</p></li>
+<li><p><strong>number</strong> (<em>th -</em>) – detected scale threshold</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>updated list of the indices of the position of the meaningful minima</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bounds - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function manage local minima which merge at some point in the
+scale-space plane according to the following rules:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if the mergin occur before the scale th then we keep only one minima</p></li>
+</ul>
+<p>(the lowest one) as they are not individually meaningful
+- if the mergin occur after the scale th then we consider that each
+initial minima is meaningful and we keep them</p>
+</div></blockquote>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/12/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.removetrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">removetrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#removetrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.removetrend" title="Link to this definition"></a></dt>
+<dd><p>Remove the global trend</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must have params[“globtrend”] to be set to one of the methods
+listed in the notes below.
+must have params[“degree”] set to the wanted polynomial degree
+if the polylaw method is selected.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function removes the global trend from f using the selected
+method sets in params[“globtrend”]. The available methods are:
+- “none” : does nothing, returns f
+- “powerlaw” : uses a power law to estimate the trend, returns</p>
+<blockquote>
+<div><p>f - powerlaw(f)</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“polylaw”: uses a polynomial interpolation of degree specified</dt><dd><dl class="simple">
+<dt>by params[“degree”] to estimate the trend, returns</dt><dd><p>f - polynomial(f)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“morpho”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - (opening(f)+closing(f))/2</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“tophat”<span class="classifier">uses morphological operators, returns</span></dt><dd><p>f - opening(f)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“opening”<span class="classifier">returns</span></dt><dd><p>opening(f)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/16/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.specreg">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">specreg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#specreg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.specreg" title="Link to this definition"></a></dt>
+<dd><p>Spectrum regularization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>nparray</em>) – vector containing the spectrum</p></li>
+<li><p><strong>params</strong> (<em>Dictionary</em>) – must have params[“reg”] to be set to one of the methods
+listed above
+must have params[“lengthfilter”] to be set for all methods
+must have params[“sigmafilter”] to be set to the standard
+deviation for the Gaussian method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>freg - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function regularizes f using the selected
+method sets in params[“reg”]. The available methods are:
+- “none” : does nothing, returns f
+- “gaussian” : convolve f with a Gaussian of length and standard</p>
+<blockquote>
+<div><p>deviation given by params[“lengthfilter”] and
+params[“sigmafilter”], respectively</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“lengthfilter”]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/17/2024)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyewt.boundaries1d.tophattrend">
+<span class="sig-prename descclassname"><span class="pre">pyewt.boundaries1d.</span></span><span class="sig-name descname"><span class="pre">tophattrend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/boundaries1d.html#tophattrend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.boundaries1d.tophattrend" title="Link to this definition"></a></dt>
+<dd><p>Remove global trend using morphological Top-Hat</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>h</strong> (<em>nparray</em>) – vector containing the histogram</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the processed histogram</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>presig - nparray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function estimates the trend using the Top Hat morphological operator
+i.e. h-opening. It then return the original histogram minus the
+trend.</p>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (12/17/2024)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pyewt.html" class="btn btn-neutral float-left" title="pyewt package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyewt.boundaries2d.html" class="btn btn-neutral float-right" title="pyewt.boundaries2d module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Jerome Gilles.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
