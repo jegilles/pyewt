@@ -23,10 +23,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
-    "sphinx.ext.duration",
-    "sphinx.ext.doctest",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.intersphinx",
+    # "sphinx.ext.duration",
+    # "sphinx.ext.doctest",
+    # "sphinx.ext.autosummary",
+    # "sphinx.ext.intersphinx",
 ]
 
 templates_path = ['_templates']
@@ -39,4 +39,3 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-#html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
