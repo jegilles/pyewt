@@ -28,6 +28,14 @@ The available transforms are:
 - scale-space method in both 1D and 2D
 - Voronoi and watershed partitioning
 
+### Installation
+
+This package can be installed via pip:
+
+```
+pip install pyewt
+```
+
 # References
 
 All papers are available in the "Publications" section at: https://jegilles.sdsu.edu/
