@@ -1,4 +1,3 @@
-from mpl_toolkits.mplot3d import axes3d
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt

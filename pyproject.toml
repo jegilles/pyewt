@@ -4,12 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyewt"
-version = "1.0.0.0"
+version = "1.0.0"
 authors = [
   { name="Jerome Gilles", email="jgilles@sdsu.edu" },
 ]
-Repository = "https://github.com/jegilles/pyEWT"
-Issues = "https://github.com/jegilles/pyEWT/issues"
+Repository = "https://github.com/jegilles/pyewt"
+Issues = "https://github.com/jegilles/pyewt/issues"
+Documentation = "https://readthedocs.org"
 description = "Package implementing the Empirical Wavelet Transforms"
 keywords = [
   "wavelet",

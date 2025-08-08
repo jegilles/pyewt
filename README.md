@@ -3,6 +3,8 @@
 This package is the official package that provides the different empirical wavelet transforms published by J.Gilles and his lab.
 It does provide the same transforms as the original Matlab toolbox (https://github.com/jegilles/Empirical-Wavelets).
 
+The source code is available at: https://github.com/jegilles/pyewt
+
 The available transforms are:
 
 ### 1D transform
@@ -27,6 +29,8 @@ The available transforms are:
 - Voronoi and watershed partitioning
 
 # References
+
+All papers are available in the "Publications" section at: https://jegilles.sdsu.edu/
 
 - J.Gilles, "Empirical Wavelet Transform" in IEEE Trans. Signal Processing, Vol.61, No.16, 3999--4010, August 2013.
 - J.Gilles, G.Tran, S.Osher "2D Empirical transforms. Wavelets, Ridgelets and Curvelets Revisited" in SIAM Journal on Imaging Sciences, Vol.7, No.1, 157--186, January 2014.
