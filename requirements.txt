@@ -64,3 +64,7 @@ threadpoolctl==3.6.0
     # via scikit-learn
 tifffile==2025.6.11
     # via scikit-image
+
+sphinx_rtd_theme==3.0.2
+    # via pyewt (pyproject.toml)
+
