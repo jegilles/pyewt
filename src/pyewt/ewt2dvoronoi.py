@@ -84,7 +84,6 @@ def ewt2d_voronoi(f,params):
 
     # Get meaningful maxima
     maxima, plane = ewt2d_get_maxima(absff, params, extH, extW)
-    # maxima = np.unique(maxima, axis=0)
 
     # Build the Voronoi cells
     vorpartition, vorcel = ewt2d_Voronoi_Partition(maxima, absff.shape)
@@ -131,11 +130,6 @@ def iewt2d_voronoi(ewtc, mfb):
     for i in range(1, len(mfb)):
         rec += np.fft.fftshift(np.fft.fft2(ewtc[i])) * mfb[i]
         dual_sum += mfb[i] ** 2
-
-    plt.imshow(dual_sum, cmap='gray')
-    plt.title('Dual sum of filters')
-    plt.axis('off')
-    plt.show()
 
     rec = np.fft.ifft2(np.fft.ifftshift(rec / dual_sum))
 
