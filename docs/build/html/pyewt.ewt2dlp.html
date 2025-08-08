@@ -44,35 +44,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.ewt2dlp module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.ewt2D_lp_scaling"><code class="docutils literal notranslate"><span class="pre">ewt2D_lp_scaling()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.ewt2d_lp"><code class="docutils literal notranslate"><span class="pre">ewt2d_lp()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.ewt2d_lp_filterbank"><code class="docutils literal notranslate"><span class="pre">ewt2d_lp_filterbank()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.ewt2d_lp_up_wavelet"><code class="docutils literal notranslate"><span class="pre">ewt2d_lp_up_wavelet()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.ewt2d_lp_wavelet"><code class="docutils literal notranslate"><span class="pre">ewt2d_lp_wavelet()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.iewt2d_lp"><code class="docutils literal notranslate"><span class="pre">iewt2d_lp()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.plot_lp_comp"><code class="docutils literal notranslate"><span class="pre">plot_lp_comp()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.plot_lp_filterbank"><code class="docutils literal notranslate"><span class="pre">plot_lp_filterbank()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dlp.plot_lp_rings"><code class="docutils literal notranslate"><span class="pre">plot_lp_rings()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
@@ -111,7 +82,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
       <li class="breadcrumb-item active">pyewt.ewt2dlp module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/pyewt.ewt2dlp.rst.txt" rel="nofollow"> View page source</a>
@@ -128,57 +98,76 @@
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.ewt2D_lp_scaling">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">ewt2D_lp_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#ewt2D_lp_scaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.ewt2D_lp_scaling" title="Link to this definition"></a></dt>
 <dd><p>2D Littlewood-Paley scaling function</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>w1</strong> (<em>-</em>)</p></li>
-<li><p><strong>gamma</strong> (<em>-</em>)</p></li>
-<li><p><strong>w</strong> (<em>-</em>)</p></li>
-<li><p><strong>h</strong> (<em>-</em>)</p></li>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>w1: radius</p></li>
+<li><p>gamma: transition ratio</p></li>
+<li><p>w: image width</p></li>
+<li><p>h: image height</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>- yms</strong> – filter corresponding to the scaling function</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ndarray</p>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>yms: ndarray</dt><dd><p>filter corresponding to the scaling function</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>Generate the 2D Littlewood-Paley scaling function in the
-Fourier domain associated to the disk [0,w1] with
+</li>
+</ul>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>Generate the 2D Littlewood-Paley scaling function in the 
+Fourier domain associated to the disk [0,w1] with 
 transition ratio gamma.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.ewt2d_lp">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">ewt2d_lp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#ewt2d_lp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.ewt2d_lp" title="Link to this definition"></a></dt>
 <dd><p>2D Littlewood-Paley Empirical Wavelet Transform</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>im</strong> (<em>ndarray</em>) – input image</p></li>
-<li><p><strong>params</strong> (<em>Dictionary</em>) – must be set properly accordingly to the options described
-in the Notes section</p></li>
-</ul>
+<section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>im: ndarray</dt><dd><p>input image</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>- ewtlp</strong> (<em>list</em>) – 2-dimensional list containing each empirical wavelet coefficients</p></li>
-<li><p><strong>- mfb</strong> (<em>list</em>) – each element of that list is a ndarray containing the different filters</p></li>
-<li><p><strong>- BR</strong> (<em>ndarray</em>) – list of boundaries (radius) normalized in [0,pi)</p></li>
-</ul>
-</p>
+<dt>params: Dictionary</dt><dd><p>must be set properly accordingly to the options described
+in the Notes section</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>This function builds the set of 2D empirical Littlewood-Paley wavelet
-filters based on parameters provided in params.
+</section>
+<section id="id2">
+<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ewtlp: list</dt><dd><p>2-dimensional list containing each empirical wavelet coefficients</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>mfb: list</dt><dd><p>each element of that list is a ndarray containing the different filters</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>BR: ndarray</dt><dd><p>list of boundaries (radius) normalized in [0,pi)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2>Notes<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>This function builds the set of 2D empirical Littlewood-Paley wavelet 
+filters based on parameters provided in params. 
 It has three main steps: 1) detect the radius of each ring using the pseudo
-polar Fourier transform, 2) build the wavelet filter bank, 3) perform the
+polar Fourier transform, 2) build the wavelet filter bank, 3) perform the 
 transform itself. The options for steps 1) are described hereafter.</p>
 <p>STEP 1): radius detection:
 If params[“log”] is set to True, then the detection is performed
@@ -189,7 +178,7 @@ on the logarithm of the spectrum of f.</p>
 <dt>A global trend remover method is set via params[“globtrend”]:</dt><dd><ul class="simple">
 <li><p>“none” : does nothing, returns f</p></li>
 <li><dl class="simple">
-<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns</span></dt><dd><p>f - powerlaw(f)</p>
+<dt>“powerlaw”<span class="classifier">uses a power law to estimate the trend, returns </span></dt><dd><p>f - powerlaw(f)</p>
 </dd>
 </dl>
 </li>
@@ -224,18 +213,18 @@ on the logarithm of the spectrum of f.</p>
 <dt>A regularization method is set via params[“reg”]:</dt><dd><ul class="simple">
 <li><p>“none” : does nothing, returns f</p></li>
 <li><dl class="simple">
-<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“lengthfilter”] and
+<dt>“gaussian”<span class="classifier">convolve f with a Gaussian of length and standard</span></dt><dd><p>deviation given by params[“lengthfilter”] and 
 params[“sigmafilter”], respectively</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+<dt>“average”: convolve f with a constant filter of length given </dt><dd><p>by params[“lengthfilter”]</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>“closing”<span class="classifier">applies the morphological closing operator of length</span></dt><dd><p>given by params[“lengthfilter”]</p>
+<dt>“closing”<span class="classifier">applies the morphological closing operator of length </span></dt><dd><p>given by params[“lengthfilter”]</p>
 </dd>
 </dl>
 </li>
@@ -252,13 +241,13 @@ The available options are:
 </div></blockquote>
 <ul class="simple">
 <li><dl class="simple">
-<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima of the preprocessed spectrum.
+<dt>“localmaxmin”<span class="classifier">select the lowest minima between consecutive </span></dt><dd><p>maxima of the preprocessed spectrum.
 params[“N”] must be set to the expected number of modes.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>“localmaxminf”<span class="classifier">select the lowest minima between consecutive</span></dt><dd><p>maxima where the minima are detected on the original spectrum
+<dt>“localmaxminf”<span class="classifier">select the lowest minima between consecutive </span></dt><dd><p>maxima where the minima are detected on the original spectrum
 instead of the preprocessed one.
 params[“N”] must be set to the expected number of modes.</p>
 </dd>
@@ -267,7 +256,7 @@ params[“N”] must be set to the expected number of modes.</p>
 <li><dl class="simple">
 <dt>“adaptivereg”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the preprocessed
 spectrum
-params[“InitBounds”] must be set with a vector of initial
+params[“InitBounds”] must be set with a vector of initial 
 boundaries</p>
 </dd>
 </dl>
@@ -275,13 +264,13 @@ boundaries</p>
 <li><dl class="simple">
 <dt>“adaptive”<span class="classifier">this method re-adjust a set of provided initial</span></dt><dd><p>boundaries based on the actual lowest minima of the original
 spectrum
-params[“InitBounds”] must be set with a vector of initial
+params[“InitBounds”] must be set with a vector of initial 
 boundaries</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to</span></dt><dd><p>automatically find the boundaries (including their number)
+<dt>“scalespace”<span class="classifier">uses the scale-space detection technique to </span></dt><dd><p>automatically find the boundaries (including their number)
 params[“typeDetect”] must be set to the wanted classification
 method. The available options are:
 - “otsu” : uses Otsu’s technique
@@ -294,133 +283,161 @@ the problem
 </dl>
 </li>
 </ul>
-<p>For the automatic detection methods, a completion step is available
-is the number of detected modes is lower than an expected value params[“N”].
-If needed, the last high frequency support is evenly splitted. This
+<p>For the automatic detection methods, a completion step is available 
+is the number of detected modes is lower than an expected value params[“N”]. 
+If needed, the last high frequency support is evenly splitted. This 
 step is performed if params[“Completion”] is set to True.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.ewt2d_lp_filterbank">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">ewt2d_lp_filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boundaries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#ewt2d_lp_filterbank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.ewt2d_lp_filterbank" title="Link to this definition"></a></dt>
 <dd><p>Build 2D Littlewood-Paley filterbank</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>boundaries</strong> (<em>-</em>) – contains the list of detected boundaries (radius)</p></li>
-<li><p><strong>w</strong> (<em>-</em>)</p></li>
-<li><p><strong>h</strong> (<em>width and height</em><em> of </em><em>the image</em><em>, </em><em>respectively.</em>)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>- mfb</strong> – each element of that list is a ndarray containing the different filters.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
+<section id="id4">
+<h2>Parameters<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>boundaries: ndarray</dt><dd><p>contains the list of detected boundaries (radius)</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>This function generate the 2D Littlewood-Paley filter bank (scaling
+</li>
+<li><p>w, h: width and height of the image, respectively.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>Returns<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>mfb: list</dt><dd><p>each element of that list is a ndarray containing the different filters.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h2>Notes<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>This function generate the 2D Littlewood-Paley filter bank (scaling 
 function + wavelets) corresponding to the provided set of frequency rings.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.ewt2d_lp_up_wavelet">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">ewt2d_lp_up_wavelet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#ewt2d_lp_up_wavelet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.ewt2d_lp_up_wavelet" title="Link to this definition"></a></dt>
 <dd><p>2D Littlewood-Paley wavelet (highest frequencies)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>wn</strong> (<em>-</em>)</p></li>
-<li><p><strong>gamma</strong> (<em>-</em>)</p></li>
-<li><p><strong>w</strong> (<em>-</em>)</p></li>
-<li><p><strong>h</strong> (<em>-</em>)</p></li>
+<section id="id7">
+<h2>Parameters<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>wn: lower radius</p></li>
+<li><p>gamma: transition ratio</p></li>
+<li><p>w: image width</p></li>
+<li><p>h: image height</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>- ymw</strong> – filter corresponding to the scaling function</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ndarray</p>
+</section>
+<section id="id8">
+<h2>Returns<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ymw: ndarray</dt><dd><p>filter corresponding to the scaling function</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>Generate the 2D Littlewood-Paley wavelet in the Fourier domain
-associated to the region above the radius wn with transition
+</li>
+</ul>
+</section>
+<section id="id9">
+<h2>Notes<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>Generate the 2D Littlewood-Paley wavelet in the Fourier domain 
+associated to the region above the radius wn with transition 
 ratio gamma.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.ewt2d_lp_wavelet">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">ewt2d_lp_wavelet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#ewt2d_lp_wavelet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.ewt2d_lp_wavelet" title="Link to this definition"></a></dt>
 <dd><p>2D Littlewood-Paley wavelet</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>wn</strong> (<em>-</em>)</p></li>
-<li><p><strong>wm</strong> (<em>-</em>)</p></li>
-<li><p><strong>gamma</strong> (<em>-</em>)</p></li>
-<li><p><strong>w</strong> (<em>-</em>)</p></li>
-<li><p><strong>h</strong> (<em>-</em>)</p></li>
+<section id="id10">
+<h2>Parameters<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>wn: lower radius</p></li>
+<li><p>wm: upper radius</p></li>
+<li><p>gamma: transition ratio</p></li>
+<li><p>w: image width</p></li>
+<li><p>h: image height</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>- ymw</strong> – filter corresponding to the scaling function</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ndarray</p>
+</section>
+<section id="id11">
+<h2>Returns<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ymw: ndarray</dt><dd><p>filter corresponding to the scaling function</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>Generate the 2D Littlewood-Paley wavelet in the Fourier domain
+</li>
+</ul>
+</section>
+<section id="id12">
+<h2>Notes<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>Generate the 2D Littlewood-Paley wavelet in the Fourier domain 
 associated to the ring [wn,wm] with transition ratio gamma.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.iewt2d_lp">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">iewt2d_lp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#iewt2d_lp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.iewt2d_lp" title="Link to this definition"></a></dt>
 <dd><p>Inverse 2D Littlewood-Paley Empirical Wavelet Transform</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ewt</strong> (<em>-</em>) – 2-dimensional list containing each empirical wavelet coefficients.</p></li>
-<li><p><strong>mfb</strong> (<em>-</em>) – list containing the filter bank used to obtain ewt.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p>Reconstructed image</p></li>
-</ul>
-</p>
+<section id="id13">
+<h2>Parameters<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ewt: list</dt><dd><p>2-dimensional list containing each empirical wavelet coefficients.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
+</li>
+<li><dl class="simple">
+<dt>mfb: list</dt><dd><p>list containing the filter bank used to obtain ewt.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id14">
+<h2>Returns<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Reconstructed image</p></li>
+</ul>
+</section>
+<section id="id15">
+<h2>Notes<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <p>This function performs the inverse 2D Littlewood-Paley EWT. Note
-that returned image is of complex type (you need to take its real
+that returned image is of complex type (you need to take its real 
 part if you expect a real image)</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.plot_lp_comp">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">plot_lp_comp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#plot_lp_comp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.plot_lp_comp" title="Link to this definition"></a></dt>
 <dd><p>Plot 2D empirical Littlewood-Paley wavelet coefficients</p>
-<section id="parameters">
-<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>Parameters:<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>ewt: list</dt><dd><p>2-dimensional list containing each empirical wavelet coefficients</p>
@@ -443,8 +460,8 @@ Version: 1.0 (01/23/2025)</p>
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.plot_lp_filterbank">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">plot_lp_filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#plot_lp_filterbank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.plot_lp_filterbank" title="Link to this definition"></a></dt>
 <dd><p>Plot 2D empirical Littlewood-Paley filters</p>
-<section id="id1">
-<h2>Parameters:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>Parameters:<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>mfb: list</dt><dd><p>list containing each Littlewood-Paley filter</p>
@@ -462,22 +479,39 @@ Version: 1.0 (01/24/2025)</p>
 <dt class="sig sig-object py" id="pyewt.ewt2dlp.plot_lp_rings">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dlp.</span></span><span class="sig-name descname"><span class="pre">plot_lp_rings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logtag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Littlewood-Paley</span> <span class="pre">Fourier</span> <span class="pre">supports'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dlp.html#plot_lp_rings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dlp.plot_lp_rings" title="Link to this definition"></a></dt>
 <dd><p>Plot the rings delineating the Littlewood-Paley supports</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<em>-</em>) – Input image</p></li>
-<li><p><strong>BR</strong> (<em>-</em>) – Array that contain the detected radius.</p></li>
-<li><p><strong>logtag</strong> (<em>-</em>) – Indicate if the logarithm of the spectrum should be used for the background.</p></li>
-<li><p><strong>title</strong> (<em>-</em>) – Title to be plotted on the figure. The default title is “Littlewood-Paley Fourier supports”.</p></li>
-</ul>
+<section id="id18">
+<h2>Parameters<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>f: 2D nparray</dt><dd><p>Input image</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
+</li>
+<li><dl class="simple">
+<dt>BR: ndarray</dt><dd><p>Array that contain the detected radius.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>logtag: True (default) or False</dt><dd><p>Indicate if the logarithm of the spectrum should be used for the background.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>title: string</dt><dd><p>Title to be plotted on the figure. The default title is “Littlewood-Paley Fourier supports”.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id19">
+<h2>Notes<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
 <p>This function plots the position of the detected rings in the Fourier domain. Each
 ring defines an empirical wavelet support.</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (01/24/2025)</p>
+</section>
 </dd></dl>
 
 </section>

@@ -44,34 +44,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.ewt2dvoronoi module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_Filterbank"><code class="docutils literal notranslate"><span class="pre">ewt2d_Voronoi_Filterbank()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_LP_function"><code class="docutils literal notranslate"><span class="pre">ewt2d_Voronoi_LP_function()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_Partition"><code class="docutils literal notranslate"><span class="pre">ewt2d_Voronoi_Partition()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.ewt2d_merge_symmetric"><code class="docutils literal notranslate"><span class="pre">ewt2d_merge_symmetric()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.ewt2d_voronoi"><code class="docutils literal notranslate"><span class="pre">ewt2d_voronoi()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.iewt2d_voronoi"><code class="docutils literal notranslate"><span class="pre">iewt2d_voronoi()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.plot_voronoi_filterbank"><code class="docutils literal notranslate"><span class="pre">plot_voronoi_filterbank()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dvoronoi.show_ewt2d_voronoi_boundaries"><code class="docutils literal notranslate"><span class="pre">show_ewt2d_voronoi_boundaries()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dwatershed.html">pyewt.ewt2dwatershed module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
@@ -109,7 +81,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
       <li class="breadcrumb-item active">pyewt.ewt2dvoronoi module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/pyewt.ewt2dvoronoi.rst.txt" rel="nofollow"> View page source</a>
@@ -126,49 +97,56 @@
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.ewt2d_Voronoi_Filterbank">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">ewt2d_Voronoi_Filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizeImg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vorocells</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extW</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#ewt2d_Voronoi_Filterbank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_Filterbank" title="Link to this definition"></a></dt>
 <dd><p>Builds the filter bank based on the detected Voronoi cells.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sizeImg</strong> (<em>tuple</em>) – Size of the image (height, width).</p></li>
-<li><p><strong>vorocells</strong> (<em>list</em><em> of </em><em>ndarray</em>) – List of Voronoi cell masks (binary arrays).</p></li>
-<li><p><strong>tau</strong> (<em>float</em>) – Transition width.</p></li>
-<li><p><strong>extH</strong> (<em>bool</em><em> or </em><em>int</em>) – 1 (or True) if there is vertical extension, 0 otherwise.</p></li>
-<li><p><strong>extW</strong> (<em>bool</em><em> or </em><em>int</em>) – 1 (or True) if there is horizontal extension, 0 otherwise.</p></li>
-</ul>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>sizeImg<span class="classifier">tuple</span></dt><dd><p>Size of the image (height, width).</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>mfb</strong> (<em>list of ndarray</em>) – List of filters (same size as sizeImg).</p></li>
-<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
-<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
-<li><p><strong>Version</strong> (<em>1.0 (07/16/2025)</em>)</p></li>
-</ul>
-</p>
+<dt>vorocells<span class="classifier">list of ndarray</span></dt><dd><p>List of Voronoi cell masks (binary arrays).</p>
+</dd>
+<dt>tau<span class="classifier">float</span></dt><dd><p>Transition width.</p>
+</dd>
+<dt>extH<span class="classifier">bool or int</span></dt><dd><p>1 (or True) if there is vertical extension, 0 otherwise.</p>
+</dd>
+<dt>extW<span class="classifier">bool or int</span></dt><dd><p>1 (or True) if there is horizontal extension, 0 otherwise.</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>mfb<span class="classifier">list of ndarray</span></dt><dd><p>List of filters (same size as sizeImg).</p>
+</dd>
+</dl>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/16/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.ewt2d_Voronoi_LP_function">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">ewt2d_Voronoi_LP_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#ewt2d_Voronoi_LP_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_LP_function" title="Link to this definition"></a></dt>
 <dd><p>Calculate the Littlewood-Paley value based on the provided distance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em>) – Distance from the edge.</p></li>
-<li><p><strong>tau</strong> (<em>float</em>) – Transition width.</p></li>
-</ul>
+<section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>x<span class="classifier">float</span></dt><dd><p>Distance from the edge.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>y</strong> (<em>float</em>) – Value of the filter.</p></li>
-<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
-<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
-<li><p><strong>Version</strong> (<em>1.0 (07/16/2025)</em>)</p></li>
-</ul>
-</p>
+<dt>tau<span class="classifier">float</span></dt><dd><p>Transition width.</p>
 </dd>
 </dl>
+</section>
+<section id="id2">
+<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>y<span class="classifier">float</span></dt><dd><p>Value of the filter.</p>
+</dd>
+</dl>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/16/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -176,68 +154,83 @@
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">ewt2d_Voronoi_Partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centroids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizeImg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#ewt2d_Voronoi_Partition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.ewt2d_Voronoi_Partition" title="Link to this definition"></a></dt>
 <dd><p>Return the Voronoi partition corresponding to the provided centroids.
 The cells are properly assigned in order to guarantee a symmetric partition.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>centroids</strong> (<em>ndarray</em>) – Array of shape (n_centroids, 2) containing the coordinates of each centroid.</p></li>
-<li><p><strong>sizeImg</strong> (<em>tuple</em>) – Size of the image (height, width).</p></li>
-</ul>
+<section id="id3">
+<h2>Parameters<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>centroids<span class="classifier">ndarray</span></dt><dd><p>Array of shape (n_centroids, 2) containing the coordinates of each centroid.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>labelImage</strong> (<em>ndarray</em>) – Image containing the Voronoi partition tagged from 1 to the number of cells.</p></li>
-<li><p><strong>voronoi_cells</strong> (<em>list of ndarray</em>) – List of binary images containing the mask of each Voronoi cell.</p></li>
-<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
-<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
-<li><p><strong>Version</strong> (<em>1.0 (07/15/2025)</em>)</p></li>
-</ul>
-</p>
+<dt>sizeImg<span class="classifier">tuple</span></dt><dd><p>Size of the image (height, width).</p>
 </dd>
 </dl>
+</section>
+<section id="id4">
+<h2>Returns<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>labelImage<span class="classifier">ndarray</span></dt><dd><p>Image containing the Voronoi partition tagged from 1 to the number of cells.</p>
+</dd>
+<dt>voronoi_cells<span class="classifier">list of ndarray</span></dt><dd><p>List of binary images containing the mask of each Voronoi cell.</p>
+</dd>
+</dl>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/15/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.ewt2d_merge_symmetric">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">ewt2d_merge_symmetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vor_cells</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centers</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#ewt2d_merge_symmetric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.ewt2d_merge_symmetric" title="Link to this definition"></a></dt>
 <dd><p>Merge symmetric Voronoi cells based on their centers.
-:param vor_cells: List of Voronoi cell masks (binary arrays).
-:type vor_cells: list of ndarray
-:param centers: Array of shape (n_centers, 2) containing the coordinates of each center.
-:type centers: ndarray</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>symvorcells</strong> – List of merged Voronoi cell masks.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of ndarray</p>
+Parameters
+———-
+vor_cells : list of ndarray</p>
+<blockquote>
+<div><p>List of Voronoi cell masks (binary arrays).</p>
+</div></blockquote>
+<dl class="simple">
+<dt>centers<span class="classifier">ndarray</span></dt><dd><p>Array of shape (n_centers, 2) containing the coordinates of each center.</p>
 </dd>
 </dl>
+<section id="id5">
+<h2>Returns<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>symvorcells<span class="classifier">list of ndarray</span></dt><dd><p>List of merged Voronoi cell masks.</p>
+</dd>
+</dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.ewt2d_voronoi">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">ewt2d_voronoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#ewt2d_voronoi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.ewt2d_voronoi" title="Link to this definition"></a></dt>
 <dd><p>Compute the 2D EWT based on a Voronoi partitioning of the Fourier domain.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<em>2D ndarray</em>) – Input image.</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – Transform parameters.</p></li>
-</ul>
+<section id="id6">
+<h2>Parameters<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>f<span class="classifier">2D ndarray</span></dt><dd><p>Input image.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>ewtc</strong> (<em>list of 2D ndarray</em>) – Collection of outputs of each EW filter.</p></li>
-<li><p><strong>mfb</strong> (<em>list of 2D ndarray</em>) – The built filter bank.</p></li>
-<li><p><strong>maxima</strong> (<em>ndarray</em>) – Coordinates of each meaningful detected maxima.</p></li>
-<li><p><strong>vorpartition</strong> (<em>2D ndarray</em>) – Detected Voronoi partition.</p></li>
-<li><p><strong>plane</strong> (<em>ndarray</em>) – Scale-space domain.</p></li>
-</ul>
-</p>
+<dt>params<span class="classifier">dict</span></dt><dd><p>Transform parameters.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>If params[“log”] is set to True, then the detection is performed on the logarithm
+</section>
+<section id="id7">
+<h2>Returns<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>ewtc<span class="classifier">list of 2D ndarray</span></dt><dd><p>Collection of outputs of each EW filter.</p>
+</dd>
+<dt>mfb<span class="classifier">list of 2D ndarray</span></dt><dd><p>The built filter bank.</p>
+</dd>
+<dt>maxima<span class="classifier">ndarray</span></dt><dd><p>Coordinates of each meaningful detected maxima.</p>
+</dd>
+<dt>vorpartition<span class="classifier">2D ndarray</span></dt><dd><p>Detected Voronoi partition.</p>
+</dd>
+<dt>plane<span class="classifier">ndarray</span></dt><dd><p>Scale-space domain.</p>
+</dd>
+</dl>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>If params[“log”] is set to True, then the detection is performed on the logarithm 
 of the spectrum of f.
 params[“typeDetect”] must be set to the wanted classification</p>
 <blockquote>
@@ -255,17 +248,17 @@ params[“edge”]: is the size (in pixels) of the strip to ignore at the edge o
 params[“includeCenter”]: if 1, the center of the image is included in the scale space maxima (0 is not included).
 params[“tau”]: is the half width of the transition area for the Voronoi partition (0.1 is a good default value).
 params[“complex”]: if 1, the Voronoi partition is complex, otherwise it is real (0 is real).</p>
-<p>Though usually not providing better results, this function allows regularization of the spectrum of f using the
+<p>Though usually not providing better results, this function allows regularization of the spectrum of f using the 
 selected method set in params[“reg”]. The available methods are:
 - “none” : does nothing, returns f
 - “gaussian” : convolve f with a Gaussian of length and standard</p>
 <blockquote>
-<div><p>deviation given by params[“lengthfilter”] and
+<div><p>deviation given by params[“lengthfilter”] and 
 params[“sigmafilter”], respectively</p>
 </div></blockquote>
 <ul class="simple">
 <li><dl class="simple">
-<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+<dt>“average”: convolve f with a constant filter of length given </dt><dd><p>by params[“lengthfilter”]</p>
 </dd>
 </dl>
 </li>
@@ -273,6 +266,7 @@ params[“sigmafilter”], respectively</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (07/21/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -280,31 +274,33 @@ Version: 1.0 (07/21/2025)</p>
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">iewt2d_voronoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewtc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#iewt2d_voronoi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.iewt2d_voronoi" title="Link to this definition"></a></dt>
 <dd><p>Performs the inverse Empirical Voronoi Wavelet Transform,
 returning a reconstruction of the image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ewtc</strong> (<em>list</em><em> of </em><em>2D ndarray</em>) – Empirical wavelet coefficients.</p></li>
-<li><p><strong>mfb</strong> (<em>list</em><em> of </em><em>2D ndarray</em>) – Corresponding empirical wavelet filters.</p></li>
-</ul>
+<section id="id8">
+<h2>Parameters<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>ewtc<span class="classifier">list of 2D ndarray</span></dt><dd><p>Empirical wavelet coefficients.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>rec</strong> (<em>2D ndarray</em>) – Reconstructed image.</p></li>
-<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
-<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
-<li><p><strong>Version</strong> (<em>1.0 (07/16/2025)</em>)</p></li>
-</ul>
-</p>
+<dt>mfb<span class="classifier">list of 2D ndarray</span></dt><dd><p>Corresponding empirical wavelet filters.</p>
 </dd>
 </dl>
+</section>
+<section id="id9">
+<h2>Returns<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>rec<span class="classifier">2D ndarray</span></dt><dd><p>Reconstructed image.</p>
+</dd>
+</dl>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/16/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.plot_voronoi_filterbank">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">plot_voronoi_filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#plot_voronoi_filterbank"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.plot_voronoi_filterbank" title="Link to this definition"></a></dt>
 <dd><p>Plot 2D empirical Voronoi filters</p>
-<section id="parameters">
-<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>Parameters:<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>mfb: list</dt><dd><p>list containing each Voronoi filter</p>
@@ -322,18 +318,17 @@ Version: 1.0 (07/16/2025)</p>
 <dt class="sig sig-object py" id="pyewt.ewt2dvoronoi.show_ewt2d_voronoi_boundaries">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dvoronoi.</span></span><span class="sig-name descname"><span class="pre">show_ewt2d_voronoi_boundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logspec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dvoronoi.html#show_ewt2d_voronoi_boundaries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dvoronoi.show_ewt2d_voronoi_boundaries" title="Link to this definition"></a></dt>
 <dd><p>Plots the edges of the Voronoi partition onto the magnitude of the Fourier spectrum of the input image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> – ndarray
-Input image.</p></li>
-<li><p><strong>vor</strong> – ndarray
-Voronoi partition image (same size as f).</p></li>
-<li><p><strong>color</strong> – list or tuple
-RGB color for the partition edges, values in [0,1]. Default is red.</p></li>
-<li><p><strong>logspec</strong> – int
-If 1, plot the logarithm of the spectrum. Default is 0.</p></li>
-</ul>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>f: ndarray</dt><dd><p>Input image.</p>
+</dd>
+<dt>vor: ndarray </dt><dd><p>Voronoi partition image (same size as f).</p>
+</dd>
+<dt>color: list or tuple </dt><dd><p>RGB color for the partition edges, values in [0,1]. Default is red.</p>
+</dd>
+<dt>logspec: int</dt><dd><p>If 1, plot the logarithm of the spectrum. Default is 0.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>Author: Jerome Gilles

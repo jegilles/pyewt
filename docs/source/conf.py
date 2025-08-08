@@ -9,7 +9,7 @@
 import html
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../../src'))
 
 project = 'pyewt'
 copyright = '2025, Jerome Gilles'
@@ -21,12 +21,7 @@ release = '1.0.0'
 
 extensions = [
     'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
-    # "sphinx.ext.duration",
-    # "sphinx.ext.doctest",
-    # "sphinx.ext.autosummary",
-    # "sphinx.ext.intersphinx",
 ]
 
 templates_path = ['_templates']

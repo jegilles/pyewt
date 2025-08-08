@@ -44,29 +44,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="pyewt.html">pyewt package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pyewt.html#submodules">Submodules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt1d.html">pyewt.ewt1d module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dcurvelet.html">pyewt.ewt2dcurvelet module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dlp.html">pyewt.ewt2dlp module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dtensor.html">pyewt.ewt2dtensor module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.ewt2dvoronoi.html">pyewt.ewt2dvoronoi module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pyewt.ewt2dwatershed module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dwatershed.ewt2d_watershed"><code class="docutils literal notranslate"><span class="pre">ewt2d_watershed()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dwatershed.iewt2d_watershed"><code class="docutils literal notranslate"><span class="pre">iewt2d_watershed()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pyewt.ewt2dwatershed.show_ewt2d_watershed_boundaries"><code class="docutils literal notranslate"><span class="pre">show_ewt2d_watershed_boundaries()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.pseudopolarfft.html">pyewt.pseudopolarfft module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pyewt.usefullfunc.html">pyewt.usefullfunc module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pyewt.html#module-pyewt">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries1d.html">pyewt.boundaries1d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.boundaries2d.html">pyewt.boundaries2d module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyewt.defaultparams.html">pyewt.defaultparams module</a></li>
@@ -99,7 +76,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="pyewt.html">pyewt package</a></li>
       <li class="breadcrumb-item active">pyewt.ewt2dwatershed module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/pyewt.ewt2dwatershed.rst.txt" rel="nofollow"> View page source</a>
@@ -116,26 +92,33 @@
 <dt class="sig sig-object py" id="pyewt.ewt2dwatershed.ewt2d_watershed">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dwatershed.</span></span><span class="sig-name descname"><span class="pre">ewt2d_watershed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dwatershed.html#ewt2d_watershed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dwatershed.ewt2d_watershed" title="Link to this definition"></a></dt>
 <dd><p>Compute the 2D EWT based on a Watershed partitioning of the Fourier domain.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<em>2D ndarray</em>) – Input image.</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – Transform parameters.</p></li>
-</ul>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>f<span class="classifier">2D ndarray</span></dt><dd><p>Input image.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>ewtw</strong> (<em>list of 2D ndarray</em>) – Collection of outputs of each EW filter.</p></li>
-<li><p><strong>mfb</strong> (<em>list of 2D ndarray</em>) – The built filter bank.</p></li>
-<li><p><strong>maxima</strong> (<em>ndarray</em>) – Coordinates of each meaningful detected maxima.</p></li>
-<li><p><strong>waterpartition</strong> (<em>2D ndarray</em>) – Detected Voronoi partition.</p></li>
-<li><p><strong>plane</strong> (<em>ndarray</em>) – Scale-space domain.</p></li>
-</ul>
-</p>
+<dt>params<span class="classifier">dict</span></dt><dd><p>Transform parameters.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>If params[“log”] is set to True, then the detection is performed on the logarithm
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>ewtw<span class="classifier">list of 2D ndarray</span></dt><dd><p>Collection of outputs of each EW filter.</p>
+</dd>
+<dt>mfb<span class="classifier">list of 2D ndarray</span></dt><dd><p>The built filter bank.</p>
+</dd>
+<dt>maxima<span class="classifier">ndarray</span></dt><dd><p>Coordinates of each meaningful detected maxima.</p>
+</dd>
+<dt>waterpartition<span class="classifier">2D ndarray</span></dt><dd><p>Detected Voronoi partition.</p>
+</dd>
+<dt>plane<span class="classifier">ndarray</span></dt><dd><p>Scale-space domain.</p>
+</dd>
+</dl>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>If params[“log”] is set to True, then the detection is performed on the logarithm 
 of the spectrum of f.
 params[“typeDetect”] must be set to the wanted classification</p>
 <blockquote>
@@ -153,17 +136,17 @@ params[“edge”]: is the size (in pixels) of the strip to ignore at the edge o
 params[“includeCenter”]: if 1, the center of the image is included in the scale space maxima (0 is not included).
 params[“tau”]: is the half width of the transition area for the Voronoi partition (0.1 is a good default value).
 params[“complex”]: if 1, the watershed partition is complex, otherwise it is real (0 is real).</p>
-<p>Though usually not providing better results, this function allows regularization of the spectrum of f using the
+<p>Though usually not providing better results, this function allows regularization of the spectrum of f using the 
 selected method set in params[“reg”]. The available methods are:
 - “none” : does nothing, returns f
 - “gaussian” : convolve f with a Gaussian of length and standard</p>
 <blockquote>
-<div><p>deviation given by params[“lengthfilter”] and
+<div><p>deviation given by params[“lengthfilter”] and 
 params[“sigmafilter”], respectively</p>
 </div></blockquote>
 <ul class="simple">
 <li><dl class="simple">
-<dt>“average”: convolve f with a constant filter of length given</dt><dd><p>by params[“lengthfilter”]</p>
+<dt>“average”: convolve f with a constant filter of length given </dt><dd><p>by params[“lengthfilter”]</p>
 </dd>
 </dl>
 </li>
@@ -171,6 +154,7 @@ params[“sigmafilter”], respectively</p>
 <p>Author: Jerome Gilles
 Institution: San Diego State University
 Version: 1.0 (07/28/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
@@ -178,41 +162,42 @@ Version: 1.0 (07/28/2025)</p>
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dwatershed.</span></span><span class="sig-name descname"><span class="pre">iewt2d_watershed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ewtw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mfb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dwatershed.html#iewt2d_watershed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dwatershed.iewt2d_watershed" title="Link to this definition"></a></dt>
 <dd><p>Performs the inverse Empirical Watershed Wavelet Transform,
 returning a reconstruction of the image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ewtw</strong> (<em>list</em><em> of </em><em>2D ndarray</em>) – Empirical wavelet coefficients.</p></li>
-<li><p><strong>mfb</strong> (<em>list</em><em> of </em><em>2D ndarray</em>) – Corresponding empirical wavelet filters.</p></li>
-</ul>
+<section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>ewtw<span class="classifier">list of 2D ndarray</span></dt><dd><p>Empirical wavelet coefficients.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>rec</strong> (<em>2D ndarray</em>) – Reconstructed image.</p></li>
-<li><p><strong>Author</strong> (<em>Jerome Gilles</em>)</p></li>
-<li><p><strong>Institution</strong> (<em>San Diego State University</em>)</p></li>
-<li><p><strong>Version</strong> (<em>1.0 (07/28/2025)</em>)</p></li>
-</ul>
-</p>
+<dt>mfb<span class="classifier">list of 2D ndarray</span></dt><dd><p>Corresponding empirical wavelet filters.</p>
 </dd>
 </dl>
+</section>
+<section id="id2">
+<h2>Returns<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>rec<span class="classifier">2D ndarray</span></dt><dd><p>Reconstructed image.</p>
+</dd>
+</dl>
+<p>Author: Jerome Gilles
+Institution: San Diego State University
+Version: 1.0 (07/28/2025)</p>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyewt.ewt2dwatershed.show_ewt2d_watershed_boundaries">
 <span class="sig-prename descclassname"><span class="pre">pyewt.ewt2dwatershed.</span></span><span class="sig-name descname"><span class="pre">show_ewt2d_watershed_boundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logspec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyewt/ewt2dwatershed.html#show_ewt2d_watershed_boundaries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyewt.ewt2dwatershed.show_ewt2d_watershed_boundaries" title="Link to this definition"></a></dt>
 <dd><p>Plots the edges of the watershed partition onto the magnitude of the Fourier spectrum of the input image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> – ndarray
-Input image.</p></li>
-<li><p><strong>wat</strong> – ndarray
-Watershed partition image (same size as f).</p></li>
-<li><p><strong>color</strong> – list or tuple
-RGB color for the partition edges, values in [0,1]. Default is red.</p></li>
-<li><p><strong>logspec</strong> – int
-If 1, plot the logarithm of the spectrum. Default is 0.</p></li>
-</ul>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>f: ndarray</dt><dd><p>Input image.</p>
+</dd>
+<dt>wat: ndarray </dt><dd><p>Watershed partition image (same size as f).</p>
+</dd>
+<dt>color: list or tuple </dt><dd><p>RGB color for the partition edges, values in [0,1]. Default is red.</p>
+</dd>
+<dt>logspec: int</dt><dd><p>If 1, plot the logarithm of the spectrum. Default is 0.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>Author: Jerome Gilles
