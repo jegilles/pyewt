@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyewt documentation &mdash; pyewt 1.0.0 documentation</title>
+  <title>pyewt - Empirical Wavelet Transforms Package &mdash; pyewt 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -70,7 +70,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">pyewt documentation</li>
+      <li class="breadcrumb-item active">pyewt - Empirical Wavelet Transforms Package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -80,11 +80,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="pyewt-documentation">
-<h1>pyewt documentation<a class="headerlink" href="#pyewt-documentation" title="Link to this heading"></a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
+  <section id="pyewt-empirical-wavelet-transforms-package">
+<h1>pyewt - Empirical Wavelet Transforms Package<a class="headerlink" href="#pyewt-empirical-wavelet-transforms-package" title="Link to this heading"></a></h1>
+<p>This package is the official Python package that provides the different empirical wavelet transforms published by J.Gilles and his lab.
+It does provide the same transforms as the original Matlab toolbox (<a class="reference external" href="https://github.com/jegilles/Empirical-Wavelets">https://github.com/jegilles/Empirical-Wavelets</a>).</p>
+<p>The source code is available at: <a class="reference external" href="https://github.com/jegilles/pyewt">https://github.com/jegilles/pyewt</a></p>
+<p>The available transforms are:</p>
+<section id="d-transforms">
+<h2>1D transforms<a class="headerlink" href="#d-transforms" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>original Littlewood-Paley transform</p></li>
+<li><p>transform using different mother wavelets</p></li>
+<li><p>tools to extract/plot the time-frequency information</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>2D transforms<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>tensor approach</p></li>
+<li><p>isotropic Littlewood-Paley</p></li>
+<li><p>curvelets type I, II, and III</p></li>
+<li><p>Voronoi based Littlewood-Paley</p></li>
+<li><p>watershed based Littlewood-Paley</p></li>
+<li><p>plotting tools for both the filters and the extracted wavelet coefficients</p></li>
+</ul>
+</section>
+<section id="partition-detection-tools">
+<h2>Partition detection tools<a class="headerlink" href="#partition-detection-tools" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>basic 1D partitioning</p></li>
+<li><p>scale-space method in both 1D and 2D</p></li>
+<li><p>Voronoi and watershed partitioning</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<p>All papers are available in the “Publications” section at: <a class="reference external" href="https://jegilles.sdsu.edu/">https://jegilles.sdsu.edu/</a></p>
+<ul class="simple">
+<li><p>J.Gilles, “Empirical Wavelet Transform” in IEEE Trans. Signal Processing, Vol.61, No.16, 3999–4010, August 2013.</p></li>
+<li><p>J.Gilles, G.Tran, S.Osher “2D Empirical transforms. Wavelets, Ridgelets and Curvelets Revisited” in SIAM Journal on Imaging Sciences, Vol.7, No.1, 157–186, January 2014.</p></li>
+<li><p>J.Gilles, K.Heal, “A parameterless scale-space approach to find meaningful modes in histograms - Application to image and spectrum segmentation”. International Journal of Wavelets, Multiresolution and Information Processing, Vol.12, No.6, 1450044-1–1450044-17, December 2014.</p></li>
+<li><p>J.Gilles, “Continuous empirical wavelets systems”, Advances in Data Science and Adaptive Analysis, Vol. 12, No 03n04, 2050006, 2020.</p></li>
+<li><p>B.Hurat, Z.Alvarado, J.Gilles. “The Empirical Watershed Wavelet”, Journal of Imaging, Special Issue “2020 Selected Papers from Journal of Imaging Editorial Board Members”, Vol.6, No.12, 140, 2020.</p></li>
+<li><p>J.Gilles, “Empirical Voronoi wavelets”, Constructive Mathematical Analysis, Vol.5, No.4, 183–189, 2022.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -222,6 +261,7 @@ documentation for details.</p>
 </li>
 </ul>
 </div>
+</section>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
