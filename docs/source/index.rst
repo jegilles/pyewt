@@ -9,6 +9,11 @@ pyewt - Empirical Wavelet Transforms Package
 This package is the official Python package that provides the different empirical wavelet transforms published by J.Gilles and his lab.
 It does provide the same transforms as the original Matlab toolbox (https://github.com/jegilles/Empirical-Wavelets).
 
+This package can be installed via pip:
+```
+pip install pyewt
+```
+
 The source code is available at: https://github.com/jegilles/pyewt
 
 The available transforms are:

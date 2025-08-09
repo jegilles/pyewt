@@ -5,6 +5,8 @@ It does provide the same transforms as the original Matlab toolbox (https://gith
 
 The source code is available at: https://github.com/jegilles/pyewt
 
+The detailed documentation is available at: https://pyewt.readthedocs.io/en/latest/index.html#
+
 The available transforms are:
 
 ### 1D transform
