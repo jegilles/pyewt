@@ -3,3 +3,4 @@ src/.venv/
 src/.vscode
 src/pyewt/__pycache__
 dist/
+docs/workspace.code-workspace
